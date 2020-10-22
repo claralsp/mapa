@@ -11,42 +11,114 @@
 <link href="estilos.css" media="all" rel="stylesheet">
 <link href="fonts.css"  rel="stylesheet">
 <link rel="shortcut icon" href="images/fav.png" />
+<script>
+	function preload(){
+		imgs=Array('1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg','7.jpg','8.jpg','9.jpg','10.jpg','11.jpg','12.jpg');
+		imgsQuantidade = imgs.length;
+		for(i=0; i<imgsQuantidade; i++){
+			var preloadimgs = new Image();
+			preloadimgs.src=imgs[i];
+		}
+
+	}
+	function iniciaSlider(){
+		preload();
+		min=1;
+		max=12;
+		imagemInicio=min;
+		transicao=true;
+		carregaImg("imgslider/1.jpg");
+		document.getElementById("slider").addEventListener("transitionend", fimTransicao);
+		timer=setInterval(trocaImg, 10000);
+	}
+	function trocaImg(){
+		transicao=false;
+		imagemInicio++;
+
+		if(imagemInicio>max){
+			imagemInicio=min;
+		}
+
+		carregaImg("imgslider/"+imagemInicio+".jpg");
+	}
+	function fimTransicao(){
+		transicao=true;
+	}
+	function carregaImg(imagemSlide){
+		document.getElementById("slider").style.backgroundImage = "URL("+imagemSlide+")";
+	}
+	function proxImg(){
+		transicao=false;
+		imagemInicio++;
+		clearInterval(timer);
+		if(imagemInicio>max){
+			imagemInicio=min;
+		}
+
+		carregaImg("imgslider/"+imagemInicio+".jpg");
+		timer=setInterval(trocaImg, 10000);
+	}
+	function voltaImg(){
+		transicao=false;
+		imagemInicio--;
+		clearInterval(timer);
+		if(imagemInicio<min){
+			imagemInicio=max;
+		}
+
+		carregaImg("imgslider/"+imagemInicio+".jpg");
+		timer=setInterval(trocaImg, 10000);
+	}
+
+</script>
 </head>
-<body>
+
+<body onload="iniciaSlider()">
+<title>MCET</title>
 <div id="parte1">
 	<div id="cabecalhos">
 		<div id="header" class="box">
-				<h1><img id="logo" src="images/lg.png" alt=""><h1>
+			<h1><img id="logo" src="images/lg.png" alt="">
+				<h1>
 		</div>
-			<div id="menuedit">
-				<nav class="navbar navbar-expand-lg navbar-light">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-					  <span class="navbar-toggler-icon"></span>
-					</button>
-					<a class="navbar-brand" href="#"></a>
-				  
-					<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-					  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-						<li class="nav-item active">
-						  <a class="nav-link" href="index.html">Página Inicial</a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link" href="campus1.html">Campus Nova Suíça<span class="sr-only"></span></a>
-						</li>
-						<li class="nav-item">
-						  <a class="nav-link disabled" href="campus2.html">Campus Nova Gameleira</a> 
-						</li>
-						<li class="nav-item">
-							<a class="nav-link disabled" href="galeria.html">Galeria</a>
-						  </li>
-					  </ul>
-					  <form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Localidade" aria-label="Search">
-						<button class="btn btn-outline-light" type="submit">Pesquisar</button>
-					  </form>
-					</div>
-				  </nav>
-					</div>
-			</div>
+		<div id="menu">
+			<ul>
+				<li><a href="index.html">Página Inicial</a></li>
+				<li><a href="campus1.html">Campus Nova Suiça</a></li>
+				<li><a href="campus2.html">Campus Gameleira</a></li>
+				<li class="campus"><a href="galeria.html">Guia por Videos</a></li>
+			</ul>
 		</div>
 	</div>
+</div>
+<div id="parte2">
+	<div class="centraliza">
+		<div id="slider"></div>
+	</div>
+	<div class="centraliza">
+		<input class="botaoSlider" type="button" value="Anterior" onclick="voltaImg()"/>
+		<input class="botaoSlider" type="button" value="Próximo" onclick="proxImg()"/>
+	</div>
+</div>
+
+<div id="footer" class="box">
+	<div class="enunciado">
+		<h2>SITES OFICIAIS CEFET-MG</h2>
+		<p class="modo">Principais referencias para informações sobre a instituíção.</p>
+	</div>
+	<ul class="links-escolares">
+		<li><a target="_blank" href="https://www.instagram.com/cefetmg/"
+				class="icon icon-instagram"><span>Instagram</span></a></li>
+		<li><a target="_blank" href="https://twitter.com/cefet_mg"
+				class="icon icon-twitter"><span>Twitter</span></a></li>
+		<li><a target="_blank" href="https://www.facebook.com/cefetmg"
+				class="icon icon-facebook"><span>Facebook</span></a></li>
+		<li><a target="_blank" href="https://www.cefetmg.br/" class="icon icon-link"><span>Site Oficial</span></a>
+		</li>
+		<li><a target="_blank" href="http://www.spe.cefetmg.br/" class="icon icon-food"><span>Secretária de Política
+					Estudantil</span></a></li>
+	</ul>
+</div>
+</body>
+
+</html>
