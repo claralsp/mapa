@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 //Mapa Gameleira
 
 const checkAtivaCamada = document.querySelectorAll('.ativa-camada');

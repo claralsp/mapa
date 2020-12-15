@@ -20,11 +20,12 @@
 		</div>
 			<div id="menuedit">
 				<nav class="navbar navbar-expand-lg navbar-light">
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-					  <span class="navbar-toggler-icon"></span>
-					</button>
-					<a class="navbar-brand" href="#"></a>
-				  
+					<div class="estilo-botao">
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="navbar-toggler-icon"></span>
+						  </button>
+						  <a class="navbar-brand" href="#"></a>
+					</div>
 					<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
 					  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 						<li class="nav-item active">
@@ -42,8 +43,7 @@
 	</div>
 	<div id="parte2">
 		<div id="mapeamento" class="box">
-			
-			<button id = "btn1" type="button" class="btn btn-secondary">Campus Nova Suiça</button>
+			<div class="primeiro">
 			<div class="row" id="mapa1">
 				<img class ='base camada images-mapa'src="images/c1/base.png">
 				<div id = "bolinha-mapa"> </div>
@@ -69,12 +69,14 @@
 					<label class="form-check-label">Caixas Eletrônicos</label>
 				</div>
 				<div>
-          <input class="ativa-camada banheiros1 form-check-input" type="checkbox" id="image-item" value="predios">
+                <input class="ativa-camada banheiros1 form-check-input" type="checkbox" id="image-item" value="predios">
 				  <label class="form-check-label"> Banheiros</label>
 				</div>
 			</div>
+			<button id = "btn1" type="button" class="btn btn-secondary">Campus Nova Suiça</button>
+		    </div>
 
-			<button id = "btn2" type="button" class="btn btn-secondary">Campus Gameleira</button>
+			
 			<div class="row" id="mapa2">
 				<div id = "bolinha-mapa"> </div>
 				<img class ='base camada images-mapa'src="images/c2/base.png">
@@ -100,11 +102,11 @@
 					<label class="form-check-label">Caixas Eletrônicos</label>
 				</div>
 				<div>
-          <input class="ativa-camada banheiros2 form-check-input" type="checkbox" id="image-item" value="predios">
+                <input class="ativa-camada banheiros2 form-check-input" type="checkbox" id="image-item" value="predios">
 				  <label class="form-check-label"> Banheiros</label>
 				</div>
 			</div>
-			</div>
+			<button id = "btn2" type="button" class="btn btn-secondary">Campus Gameleira</button>
 	</div>
 </div>
 

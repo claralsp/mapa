@@ -120,29 +120,32 @@
 	#cabecalhos{
 		background-color: #00386a;
 		overflow: hidden;
-		padding: 2em 0em;
 	}
 
 	#header{
 		background-color: #00386a;
 		max-width: 100%;
 	}
-
-	#logo {
+	
+	.estilo-botao{
+		display: block;
+		margin-top: 0%;		
+	}
+	
+	#logo{
 		display: block;
 		margin-top: 0%;
 		margin-left: auto;
 		margin-right: auto;
-		padding: 0em 0em;
 		text-align: center;
 	  }
 	  @media screen and (orientation: portrait) {
 		#logo {
-		  width: 90%;
+		  width: 60%;
 		  margin-top: 0%;
+		  padding-bottom: 0.5em 0em;
 		}
 	  }
-
 	img{
 		text-align: center;
 	}
@@ -396,3 +399,26 @@
 	from{ transform: scale(1);}
 	to{transform:scale(1.5);}
 }
+
+ .criadoras{
+	 background-color: #eee4e4;
+ }
+
+ /*botões mapa*/
+
+    #btn1 #btn2{
+	width: auto;
+	height: auto;
+	margin-bottom: 2%;
+	padding: 2%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+ @media screen and (orientation: portrait) {
+	#btn1, #btn2{
+	  width: 100%;
+	  padding: 2%;
+	}
+  }
