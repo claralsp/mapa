@@ -11,7 +11,7 @@
 	body{
 		margin: 0%;
 		padding: 0%;
-		background:rgb(170, 169, 169);
+		background:#fff;
 		font-family: 'Varela Round', sans-serif;
 		font-size: 11pt;
 		font-weight: 400;
@@ -118,12 +118,12 @@
 	}
 
 	#cabecalhos{
-		background-color: #00386a;
+		background-color: #fff;
 		overflow: hidden;
 	}
 
 	#header{
-		background-color: #00386a;
+		background-color: #fff;
 		max-width: 100%;
 	}
 	
@@ -180,6 +180,15 @@
 		color: rgba(0, 0, 0, 0);
 	}
 
+	@font-face{
+		font-family: 'titulo';
+		src: url(amethyst/Amethyst.ttf);
+	}
+	.navbar-brand{
+		font-family: titulo;
+		text-decoration: none;
+	}
+
 	.nav{
 		text-align: center;
 	}
@@ -218,10 +227,10 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		outline: 0;
-		color: #dacccc;
+		color: #161143;
 	}
 	#menuedit .campus a{
-		border: 2px solid  #dacccc;
+		border: 2px solid  #161143;
 		border-radius: 4px;
 	}
 
@@ -260,7 +269,7 @@
   }
 
 	#parte1, #parte2{
-		background: #FFF;
+		background: #161143;
 	}
 
 	#mapeamento{
@@ -301,12 +310,12 @@
   }
 
 
-.btn-secondary {
+.btn-outline-light {
     margin-top: 3%;
     color: #fff;
-    background-color: #6c757d;
-    border-color: #6c757d;
-    padding: 3px;
+    background-color: #00000000;
+    border-color: #ffffff;
+    padding: 10%;
 }
 
 .images-mapa{
