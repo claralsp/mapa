@@ -319,16 +319,9 @@
 }
 
 .images-mapa{
-	width: 70%;
-	height: 70%;
 	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	padding: 0em 0em;
-	text-align: center;
-	margin-top: 2%;
-	margin-bottom: 2%;
   }
+
   @media screen and (orientation: portrait) {
 	.images-mapa {
 	  width: 100%;
