@@ -467,7 +467,7 @@
   width: 100%;
   bottom: -20px;
   left: 0;
-}
+} 
 @media screen and (orientation: portrait) {
 	.imagens{
 	  	width: 100%;
@@ -489,3 +489,34 @@
   .form-check-label{
 	  color: white;
   }
+ 
+  #secao-busca {
+	font-size: 20px;
+	padding: 0.5em;
+  }
+  
+  #campo-de-busca {
+	padding: 0.5em;
+	flex: 1;
+	margin-right: 0.5em;
+	border-radius: 5px;
+	border: 1px solid darkgray;
+  }
+  
+  .campo-e-botao {
+	display: block;
+	font-size: 1em;
+	display: flex;
+	justify-content: space-between;
+  }
+  
+  #resultados-da-busca {
+	margin-top: 1em;
+	font-size: 16px;
+  }
+  
+  #resultados-da-busca ul {
+	list-style-type: none;
+	padding-left: 0;
+  }
+ 

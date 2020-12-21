@@ -20,10 +20,12 @@ bntRodape2.addEventListener('click', () => {
   if(bntRodape2Clicado == false) {
     bntRodape2.classList.add('btnRdpClicado');
     bntRodape2Clicado = true;
+    document.getElementById('secao-busca').style.display = 'block';
     return;
   }
   else{
     bntRodape2.classList.remove('btnRdpClicado');
+    document.getElementById('secao-busca').style.display = 'none';
     bntRodape2Clicado = false;
   }
 });
