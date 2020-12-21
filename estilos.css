@@ -1,4 +1,5 @@
-	html, body{
+/*Cabeçalho*/
+html, body{
 		max-height: 100%;
 		max-width: 100%;
 	}
@@ -39,6 +40,7 @@
 	p{
 		line-height: 180%;
 	}
+
 	.box{
 		margin: 0% auto;
 		width: 100%;
@@ -110,13 +112,6 @@
 		margin-bottom: auto;
 	}
 
-	.enunciado .modo{
-		letter-spacing: 0.15em;
-		font-weight: 400;
-		font-size: 1.1em;
-		color: white;
-	}
-
 	#cabecalhos{
 		background-color: #fff;
 		overflow: hidden;
@@ -132,23 +127,6 @@
 		margin-top: 0%;
 	}
 
-	#logo{
-		display: block;
-		margin-top: 0%;
-		margin-left: auto;
-		margin-right: auto;
-		text-align: center;
-	  }
-	  @media screen and (orientation: portrait) {
-		#logo {
-		  width: 60%;
-		  margin-top: 0%;
-		  padding-bottom: 0.5em 0em;
-		}
-	  }
-	img{
-		text-align: center;
-	}
 	/*menu*/
 	.btnMenu{
 		background-image: url(images/menu.png);
@@ -275,6 +253,7 @@
 
 	#parte1, #parte2{
 		background: #161143;
+		height: min-content;
 	}
 
 	#mapeamento{
@@ -312,16 +291,23 @@
 		font-size: 1.6em;
 		color:(whitesmoke);
   }
-
+   
 
 .btn-outline-light {
     margin-bottom: -5%;
-    margin-top: 30%;
+    margin-top: 10%;
     color: #fff;
     background-color: #00000000;
     border-color: #ffffff;
     padding: 10%;
 }
+@media screen and (orientation: portrait) {
+	.btn-outline-light{
+	  	margin-top: 30%;
+		}
+  }
+
+
 
 .bntClicado {
     background-color:  #fff;
@@ -341,7 +327,8 @@
   #mapa1, #mapa2 {
 	display: none;
 	position: relative;
-	margin: 0;
+	margin-top: 0;
+	margin-top: 15%;
    }
 
  .row{
@@ -355,7 +342,7 @@
 .camada:not(.base) {
 	position: absolute;
 	z-index: 1;
-	top: 0;
+	top: -0;
 	left: 0;
 	opacity: 0;
 	pointer-events: none;
@@ -364,33 +351,9 @@
 
 }
 
-
 .camada.visivel {
 	transform: scale(1);
 	opacity: 1;
-}
-#slider{
-	width: 600px;
-	height: 450px;
-	transition: background-image 2s;
-}
-.centraliza{
-	align-items: center;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: center;
-}
-.botaoSlider{
-	width: 125px;
-	font-family: 'Varela Round', sans-serif;
-	background-color:  #6c757d;
-	border-color:  #6c757d;
-	border-radius: 25px;
-	color:  white;
-	margin-bottom: 1%;
-	margin-right: 1%;
-	margin-top: 1%;
 }
 
 #bolinha-mapa{
@@ -421,6 +384,7 @@
     #btn1 #btn2{
 	width: auto;
 	height: auto;
+	margin-top: 1%;
 	margin-bottom: 2%;
 	padding: 2%;
 	display: block;
@@ -519,4 +483,5 @@
 	list-style-type: none;
 	padding-left: 0;
   }
+
  
