@@ -172,6 +172,10 @@ ul.links-escolares li a:before{
 	text-decoration: none;
 }
 
+#titulopagina{
+	margin-left: 5%;
+}
+
 .nav{
 	text-align: center;
 }
@@ -259,8 +263,9 @@ html, body{
 #mapeamento{
 	overflow: hidden;
 	width: 100%;
-	padding: 5em 10% 12em 2%;
-	text-align: center;
+	padding: 8em 10% 8em 10%;
+	margin-left: auto;
+	margin-right: auto;
 	color:rgb(30, 81, 110);
 }
 
@@ -382,7 +387,7 @@ to{transform:scale(1.5);}
 /*botões mapa*/
 
 #btn1 #btn2{
-width: auto;
+width: 100%;
 height: auto;
 margin-top: 1%;
 margin-bottom: 2%;
@@ -390,6 +395,7 @@ padding: 2%;
 display: block;
 margin-left: auto;
 margin-right: auto;
+text-align: center;
 }
 
 @media screen and (orientation: portrait) {
@@ -451,7 +457,13 @@ left: 0;
 }
 
 .form-check-label{
+  margin-left: 3.0em;
   color: white;
+  margin-top: 3%;
+}
+.form-check-input{
+	margin-top: 4%;
+	margin-left: 1.5em;
 }
 
 #secao-busca {
