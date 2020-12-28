@@ -167,13 +167,37 @@ ul.links-escolares li a:before{
 	font-family: 'titulo';
 	src: url(amethyst/Amethyst.ttf);
 }
-.navbar-brand{
-	font-family: titulo;
-	text-decoration: none;
-}
 
 #titulopagina{
+	font-family: titulo;
+	text-decoration: none;
+	font-size: 22px;
+	margin-left: 10%;
+}
+
+@media screen and (orientation:portrait){
+#titulopagina{
+	font-family: titulo;
+	text-decoration: none;
+	font-size: 22px;
 	margin-left: 5%;
+	margin-right: auto;
+}
+}
+
+#cefetlogo{
+	width: 4%;
+	margin-top: -0.5%;
+	margin-left: -18%;
+	margin-right: 49%;
+}
+
+@media screen and (orientation: portrait) {
+	#cefetlogo{
+		width: 12%;
+		margin-top: -1%;
+		margin-right: 10%;
+	}
 }
 
 .nav{
@@ -442,17 +466,6 @@ left: 0;
 .imagens{
   	width: 100%;
   	padding: 2%;
-	}
-}
-
-#cefetlogo{
-  width: 10%;
-}
-
-@media screen and (orientation: portrait) {
-	#cefetlogo{
-  	width: 12%;
-  	margin-left: 10%;
 	}
 }
 
