@@ -1,24 +1,13 @@
-var btn_1 = document.getElementById('btn1');
-var mapa_1 = document.getElementById('mapa1');
-var btn_2 = document.getElementById('btn2');
-var mapa_2 = document.getElementById('mapa2');
+const btn_1 = document.getElementById('btn1');
+const btn_2 = document.getElementById('btn2');
+const bodyEl = document.querySelector('body');
 
 btn_1.addEventListener('click', () => {
-if(mapa_1.style.display != 'block') {
-  mapa_1.style.display = 'block';
-  btn1.classList.add('bntClicado');
-  return;
-}
-mapa_1.style.display = 'none';
-btn1.classList.remove('bntClicado');
+  bodyEl.classList.remove('mostrando-c2');
+  bodyEl.classList.add('mostrando-c1');
 });
 
 btn_2.addEventListener('click', () => {
-  if(mapa_2.style.display != 'block') {
-    mapa_2.style.display = 'block';
-    btn2.classList.add('bntClicado');
-    return;
-  }
-  mapa_2.style.display = 'none';
-  btn2.classList.remove('bntClicado');
+  bodyEl.classList.remove('mostrando-c1');
+  bodyEl.classList.add('mostrando-c2');
 });
