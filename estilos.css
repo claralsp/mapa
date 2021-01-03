@@ -360,7 +360,7 @@ display: block;
 	display: none;
 	position: relative;
 	margin-top: 0;
-	margin-top: 15%;
+	margin-top: 1.5em;
 }
 
 body.mostrando-c1 #mapa1 {
