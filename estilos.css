@@ -520,3 +520,17 @@ padding-left: 0;
 .botoes-campi > button:not(:last-of-type) {
 	margin-right: 0.5em;
 }
+
+.ativadores-de-camadas {
+	padding: 1em 1.25em;
+	font-size: 1em;
+	color: white;
+}
+
+.ativadores-de-camadas > .form-row {
+	margin-bottom: 0.5em;
+}
+
+.mapa-com-camadas {
+	position: relative;
+}
