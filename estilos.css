@@ -575,5 +575,9 @@ figure{
 		margin-bottom: 5px;
 		display: block;
 		}
+	figure{
+		text-align: center;
+		font-size:8px;
+	}
 }
 	
