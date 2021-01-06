@@ -495,8 +495,9 @@ padding-left: 0;
 .botoes-campi {
 	display: flex;
 	flex-direction: row;
-	padding: 0 0.5em;
+	padding: 0.5em;
 	justify-content: space-around;
+
 }
 
 .botoes-campi > button {
@@ -538,7 +539,7 @@ padding-left: 0;
 }
 
 #footer{
-	background-color: #00386a;
+	background-color: #161142;
 }
 
 #footer h2, p{
@@ -548,7 +549,7 @@ padding-left: 0;
 .perfil{
 	width: 200px;
 	border-radius: 50%;
-	border: #00386a solid 2px;
+	border: #161142 solid 2px;
 	margin-left: 15px;
 	margin-right: 15px;
 	margin-top: 5px;
@@ -580,4 +581,28 @@ figure{
 		font-size:8px;
 	}
 }
-	
+
+#comoChegar{
+	background-color: #161142;
+}
+
+#comoChegar h4{
+	color: white;
+	margin-left: 5px;
+}
+
+#comoChegar p{
+	color: white;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.comoChegarMapa{
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
