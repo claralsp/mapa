@@ -72,7 +72,7 @@ ul.links-escolares li span{
 }
 
 ul.links-escolares li a{
-	color: rgba(255,255,255,1);
+	color: #00386a;
 }
 
 ul.links-escolares li a:before{
@@ -80,7 +80,7 @@ ul.links-escolares li a:before{
 	width: 60px;
 	height: 60px;
 	line-height: 60px;
-	background: #00386a;
+	background: white;
 	border-radius: 30px;
 	text-align: center;
 }
@@ -526,3 +526,58 @@ padding-left: 0;
 .mapa-com-camadas {
 	position: relative;
 }
+
+.sobreoprojeto p{
+	color:#000000;
+	text-align: center;
+}
+
+.sobreoprojeto h2{
+	padding-top: 25px;
+	padding-bottom: 25px;
+}
+
+#footer{
+	background-color: #00386a;
+}
+
+#footer h2, p{
+	color: white;
+}
+
+.perfil{
+	width: 200px;
+	border-radius: 50%;
+	border: #00386a solid 2px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	display: block;
+}
+figure{
+	text-align: center;
+}
+.perfis-des, .perfis-ori{
+	display: flex;
+	margin-left: auto;
+	margin-right: auto;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center
+}
+@media screen and (orientation: portrait) {
+	.perfil{
+		width: 50px;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-top: 5px;
+		margin-bottom: 5px;
+		display: block;
+		}
+	figure{
+		text-align: center;
+		font-size:8px;
+	}
+}
+	
