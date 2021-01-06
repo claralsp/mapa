@@ -121,10 +121,14 @@ function encontrouPosicao(gps) {
   bolotinhaEl.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) / 2)`;
 }
 
+function erroNoGPS(erro) {
+	console.log(erro)
+};
+
 function tratamentoDeErros(erro) {
   switch (erro.code) {
     case erro.PERMISSION_DENID:
-      alert("Geolocalização rejeitada!");
+      alert("Localização rejeitada!");
       break;
 
     case erro.POSITION_UNAVAILABLE:
@@ -151,5 +155,11 @@ function atualizaPosicao() {
     alert("Localização não suportada pelo navegador!");
   }
 
+}
+
+if (navigator.geolocation) {
+	navigator.geolocation.watchPosition(encontrouPosicao, erroNoGPS, atualizaPosicao, tratamentoDeErros, {
+  enableHighAccuracy: true
+  });
 }
 
