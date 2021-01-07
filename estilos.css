@@ -403,11 +403,6 @@ transform: scale(1);
 opacity: 1;
 }
 
-@keyframes pulso{
-	from { transform: scale(1);}
-	to{transform:scale(1.5);}
-}
-
 .criadoras{
  background-color: #eee4e4;
 }
@@ -605,4 +600,32 @@ figure{
 	flex-direction: row;
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+
+body.usuario-no-c1 #btn1::before,
+body.usuario-no-c2 #btn2::before {
+    content: "";
+    display: inline-block;
+    --tamanho: 0.75em;
+    width: var(--tamanho);
+	height: var(--tamanho);
+	position: relative;
+    background: cornflowerblue;
+    border-radius: 50%;
+    margin-right: .5em;
+    background-clip: content-box;
+    padding: calc(var(--tamanho) / 15);
+    border: 1px solid cornflowerblue;
+    animation: pulsando 2s ease-in-out 0s infinite alternate;
+}
+
+@keyframes pulsando {
+	from {
+		transform: scale(1);
+	}
+
+	to{
+		transform: scale(1.3);
+	}
 }
