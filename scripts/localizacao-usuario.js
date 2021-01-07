@@ -116,9 +116,9 @@ function encontrouPosicao(gps) {
   const baricentricas = converteParaCoordenadasBaricentricas(posicao.x, posicao.y, triangulacao.latitudeLongitude.A, triangulacao.latitudeLongitude.B, triangulacao.latitudeLongitude.C);
   const noMapa = converteBaricentricasParaMapa(baricentricas.x, baricentricas.y, triangulacao.mapinha.A, triangulacao.mapinha.B, triangulacao.mapinha.C);
 
-  const bolotinhaEl = document.querySelector('#bolotinha-do-gps');
-  bolotinhaEl.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-  bolotinhaEl.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) / 2)`;
+  const marcador2El = document.querySelector('#marcador2');
+  marcador2El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
+  marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) / 2)`;
 }
 
 function erroNoGPS(erro) {
