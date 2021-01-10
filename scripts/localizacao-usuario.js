@@ -31,17 +31,17 @@ const triangulacoes = {
   },
   novaSuica: {
     latitudeLongitude: {
-      A: {
-        x: null,
-        y: null
+      A: { // alguns metros depois da portaria da Rua Alpes
+        x: -19.930603337917294,
+        y: -43.97760830731792
       },
-      B: {
-        x: null,
-        y: null
+      B: { // espaço entre a parte de trás do ginásio e a R. Tobias Barreto
+        x: -19.9297477097802,
+        y: -43.97599093531417
       },
-      C: {
-        x: null,
-        y: null
+      C: { // calçada atrás do DEMAT
+        x: -19.930383330390164,
+        y: -43.97935612221241
       }
     },
     mapinha: {
