@@ -60,8 +60,15 @@ const triangulacoes = {
     }
   }
 };
-let campusAtual = 'novaGameleira';
+let campusAtual = 'novaSuica';
 
+btn_1.addEventListener('click', () => {
+  campusAtual = 'novaSuica';
+});
+
+btn_2.addEventListener('click', () => {
+  campusAtual = 'novaGameleira';
+});
 
 function converteParaCoordenadasBaricentricas(x, y, A, B, C) {
   const origem = B;
@@ -107,18 +114,27 @@ function converteBaricentricasParaMapa(x, y, A, B, C) {
   };
 }
 
-function encontrouPosicao(gps) {
-  const posicao = {
-    x: gps.coords.latitude,
-    y: gps.coords.longitude
-  };
+function converteLatLonParaPorcentagem(latitude, longitude, campusAtual) {
   const triangulacao = triangulacoes[campusAtual];
-  const baricentricas = converteParaCoordenadasBaricentricas(posicao.x, posicao.y, triangulacao.latitudeLongitude.A, triangulacao.latitudeLongitude.B, triangulacao.latitudeLongitude.C);
+  const baricentricas = converteParaCoordenadasBaricentricas(latitude, longitude, triangulacao.latitudeLongitude.A, triangulacao.latitudeLongitude.B, triangulacao.latitudeLongitude.C);
   const noMapa = converteBaricentricasParaMapa(baricentricas.x, baricentricas.y, triangulacao.mapinha.A, triangulacao.mapinha.B, triangulacao.mapinha.C);
 
-  const marcador2El = document.querySelector('#marcador2');
-  marcador2El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-  marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) / 2)`;
+  return noMapa;
+}
+
+function encontrouPosicao(gps) {
+  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, campusAtual);
+
+  if (campusAtual == 'novaGameleira') {
+    const marcador2El = document.querySelector('#marcador2');
+    marcador2El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
+    marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) / 2)`;
+  } else {
+    const marcador1El = document.querySelector('#marcador1');
+    marcador1El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
+    marcador1El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) / 2)`;
+  }
+
 }
 
 function erroNoGPS(erro) {
@@ -159,7 +175,7 @@ function atualizaPosicao() {
 
 if (navigator.geolocation) {
   navigator.geolocation.watchPosition(encontrouPosicao, erroNoGPS, atualizaPosicao, tratamentoDeErros, {
-  enableHighAccuracy: true
+    enableHighAccuracy: true
   });
 }
 
