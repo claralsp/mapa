@@ -46,16 +46,16 @@ const triangulacoes = {
     },
     mapinha: {
       A: {
-        x: null,
-        y: null
+        x: 0.033217672,
+        y: 0.036893966
       },
       B: {
-        x: null,
-        y: null
+        x: 0.033216245,
+        y: 0.036892609
       },
       C: {
-        x: null,
-        y: null
+        x: 0.033217305,
+        y: 0.036895443
       }
     }
   }
