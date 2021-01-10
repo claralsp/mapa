@@ -1,3 +1,22 @@
+
+// pega todos os elementos do DOM com a classe 'boo'
+let btnRdps = document.querySelectorAll('.btnRdp');
+
+// percorre a lista de 'boo's
+for (let i = 0; i < btnRdps.length; i++) {
+	// atribui um evento para o 'boo' atual
+	btnRdps[i].addEventListener('click', function(e) {
+  
+  	// remove a classe 'selecionado' de todos os 'boos'
+    for (let j = 0; j < btnRdps.length; j++) {
+    	btnRdps[j].classList.remove('btnRdpClicado');
+    };
+    
+    // recoloca a classe 'selecionado' no 'boo' que foi clicado
+  	let btnRdpEl = e.currentTarget;
+    btnRdpEl.classList.add('btnRdpClicado');
+    
+
 const b1 = document.getElementById('btn1');
 const b2 = document.getElementById('btn2');
 
@@ -65,3 +84,7 @@ else{
   bntRodape3Clicado = false;
 }
 });
+  });
+};
+
+
