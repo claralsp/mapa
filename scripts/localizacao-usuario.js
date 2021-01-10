@@ -122,7 +122,7 @@ function encontrouPosicao(gps) {
 }
 
 function erroNoGPS(erro) {
-	console.log(erro)
+  console.log(erro)
 };
 
 function tratamentoDeErros(erro) {
@@ -158,7 +158,7 @@ function atualizaPosicao() {
 }
 
 if (navigator.geolocation) {
-	navigator.geolocation.watchPosition(encontrouPosicao, erroNoGPS, atualizaPosicao, tratamentoDeErros, {
+  navigator.geolocation.watchPosition(encontrouPosicao, erroNoGPS, atualizaPosicao, tratamentoDeErros, {
   enableHighAccuracy: true
   });
 }
