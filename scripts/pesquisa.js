@@ -6,19 +6,6 @@ const lugaresDeInteresse = {
       longitude: 12,
       nome: 'Banheiro masculino no prédio 12',
     },
-    {
-      predio: '12',
-      latitude: 33,
-      longitude: 12,
-      nome: 'Banheiro feminino no prédio 12',
-
-    },
-    {
-      predio: '20',
-      latitude: 33,
-      longitude: 12,
-      nome: 'Lanchonte HL',
-    }
     ],
     novaSuica: [
       {
@@ -218,7 +205,7 @@ const lugaresDeInteresse = {
         predio: 'principal',
         latitude: 33,
         longitude: 33,
-        nome: 'Smood',
+        nome: 'Enfermaria - Smood',
       },
       {
         predio: 'principal',
@@ -254,7 +241,7 @@ const lugaresDeInteresse = {
         predio: 'principal',
         latitude: 33,
         longitude: 33,
-        nome: 'Achados e perdidos',
+        nome: 'Achados e perdidos - 2',
       },
       {
         predio: 'principal',
