@@ -1,4 +1,5 @@
 navigator.geolocation.getCurrentPosition(localizarCampus);
+let id = navigator.geolocation.watchPosition(acompanharPosicao);
 
 let campi = [
     {
@@ -17,11 +18,13 @@ let campi = [
     }
 ]
 
-function localizarCampus(geoLocalizacao) {
+function localizarCampus(geoLocalizacao) 
+{
     let x = (geoLocalizacao.coords.latitude);
     let y = (geoLocalizacao.coords.longitude);
     let userDentroCampus = false;
     let campusUser = null;
+    let bodyEl = document.querySelector("body");
   
     for(let campus of campi) {
         userDentroCampus = x>=campus.latMinima && x<=campus.latMaxima && y>=campus.longMinima && y<=campus.longMaxima;
@@ -31,9 +34,42 @@ function localizarCampus(geoLocalizacao) {
           break;
         }       
     }
-    
+
     if(!userDentroCampus) {
         console.log("Voce nao esta em nenhum campus");
     }
+
+    if(campusUser.nome == "campus1") {
+        bodyEl.classList.add('usuario-no-c1');
+    }
+    else if(campusUser.nome == "campus2") {
+        bodyEl.classList.remove('mostrando-c1');
+        bodyEl.classList.add('mostrando-c2');
+        bodyEl.classList.add('usuario-no-c2');
+    }
   
+}
+
+function acompanharPosicao(geoLocalizacao) 
+{
+    let x = (geoLocalizacao.coords.latitude);
+    let y = (geoLocalizacao.coords.longitude);
+    let userDentroCampus = false;
+    let campusUser = null;
+    let bodyEl = document.querySelector("body");
+  
+    for(let campus of campi) {
+        userDentroCampus = x>=campus.latMinima && x<=campus.latMaxima && y>=campus.longMinima && y<=campus.longMaxima;
+        if(userDentroCampus) {
+          campusUser = campus;
+          break;
+        }       
+    }
+
+    if(campusUser.nome == "campus1") {
+        bodyEl.classList.add('usuario-no-c1');
+    }
+    else if(campusUser.nome == "campus2") {
+        bodyEl.classList.add('usuario-no-c2');
+    }
 }
