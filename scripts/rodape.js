@@ -21,17 +21,6 @@ if(bntRodape1Clicado == false) {
   bntRodape1.classList.add('btnRdpClicado');
   document.getElementById('mapeamento').style.display = 'none';
   document.getElementById('comoChegar').style.display = 'block';
-  
-  b1.addEventListener('click', () =>{
-    document.getElementById('comoChegarCampusII').style.display = 'none';
-    document.getElementById('comoChegarCampusI').style.display = 'block';
-  });
-
-  b2.addEventListener('click', () =>{
-    document.getElementById('comoChegarCampusI').style.display = 'none';
-    document.getElementById('comoChegarCampusII').style.display = 'block';
-  });
-
   bntRodape1Clicado = true;
   return;
 }
