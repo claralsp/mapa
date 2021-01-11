@@ -35,17 +35,18 @@ function localizarCampus(geoLocalizacao)
         }       
     }
 
-    if(!userDentroCampus) {
+    if(campusUser == null) {
         alert("Voce nao esta em nenhum campus");
     }
-
-    if(campusUser.nome == "campus1") {
-        bodyEl.classList.add('usuario-no-c1');
-    }
-    else if(campusUser.nome == "campus2") {
-        bodyEl.classList.remove('mostrando-c1');
-        bodyEl.classList.add('mostrando-c2');
-        bodyEl.classList.add('usuario-no-c2');
+    else { 
+        if(campusUser.nome == "campus1") {
+            bodyEl.classList.add('usuario-no-c1');
+        }
+        else if(campusUser.nome == "campus2") {
+            bodyEl.classList.remove('mostrando-c1');
+            bodyEl.classList.add('mostrando-c2');
+         bodyEl.classList.add('usuario-no-c2');
+        }
     }
   
 }
@@ -66,10 +67,10 @@ function acompanharPosicao(geoLocalizacao)
         }       
     }
 
-    if(campusUser.nome == "campus1") {
+    if(campusUser != null && campusUser.nome == "campus1") {
         bodyEl.classList.add('usuario-no-c1');
     }
-    else if(campusUser.nome == "campus2") {
+    else if(campusUser != null && campusUser.nome == "campus2") {
         bodyEl.classList.add('usuario-no-c2');
     }
 }
