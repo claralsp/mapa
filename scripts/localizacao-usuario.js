@@ -62,14 +62,11 @@ const triangulacoes = {
 };
 let campusAtual = 'novaSuica';
 
-btn_1.addEventListener('click', () => {
-  campusAtual = 'novaSuica';
-});
-
-btn_2.addEventListener('click', () => {
-  campusAtual = 'novaGameleira';
-});
-
+  const btng = document.getElementById('btn2');
+  btng.addEventListener('click', () => {
+    campusAtual = 'novaGameleira';
+  });
+  
 function converteParaCoordenadasBaricentricas(x, y, A, B, C) {
   const origem = B;
   const base1 = {
