@@ -30,13 +30,13 @@ function localizarCampus(geoLocalizacao)
         userDentroCampus = x>=campus.latMinima && x<=campus.latMaxima && y>=campus.longMinima && y<=campus.longMaxima;
         if(userDentroCampus) {
           campusUser = campus;
-          console.log("Voce esta no " + campusUser.nome);
+          alert("Voce esta no " + campusUser.nome);
           break;
         }       
     }
 
     if(!userDentroCampus) {
-        console.log("Voce nao esta em nenhum campus");
+        alert("Voce nao esta em nenhum campus");
     }
 
     if(campusUser.nome == "campus1") {
