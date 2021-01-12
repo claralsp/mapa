@@ -50,6 +50,9 @@ else{
 });
 
 
+const bntRodape3 = document.querySelector('.btnRdp3');
+var bntRodape3Clicado = false;
+
 bntRodape3.addEventListener('click', () => {
 if(bntRodape3Clicado == false) {
   bntRodape3.classList.add('btnRdpClicado');
