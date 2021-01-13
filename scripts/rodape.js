@@ -1,72 +1,40 @@
-let btnRdps = document.querySelectorAll('.btnRdp');
+const botoesRodape = document.querySelectorAll('.btn-rodape');
 
-for (let i = 0; i < btnRdps.length; i++) {
-	
-	btnRdps[i].addEventListener('click', function(e) {
-    for (let j = 0; j < btnRdps.length; j++) {
-    	btnRdps[j].classList.remove('btnRdpClicado');
-    };
+for (let btnRodapeEl of botoesRodape) {
+	btnRodapeEl.addEventListener('click', function(e) {
+    // deixa todos inativos
+    for (let el of botoesRodape) {
+    	el.classList.remove('btn-rodape-ativo');
+    }
+   
+    // ativa apenas o clicado
   	let btnRdpEl = e.currentTarget;
-    btnRdpEl.classList.add('btnRdpClicado');
-    
+    btnRdpEl.classList.add('btn-rodape-ativo');
 
-const b1 = document.getElementById('btn1');
-const b2 = document.getElementById('btn2');
-
-const bntRodape1 = document.querySelector('.btnRdp1');
-var bntRodape1Clicado = false;
-
-bntRodape1.addEventListener('click', () => {
-if(bntRodape1Clicado == false) {
-  bntRodape1.classList.add('btnRdpClicado');
-  document.getElementById('mapeamento').style.display = 'none';
-  document.getElementById('comoChegar').style.display = 'block';
-  bntRodape1Clicado = true;
-  return;
-}
-else{
-  bntRodape1.classList.remove('btnRdpClicado');
-  document.getElementById('comoChegar').style.display = 'none';
-  document.getElementById('mapeamento').style.display = 'block';
-  bntRodape1Clicado = false;
-}
-});
-
-const bntRodape2 = document.querySelector('.btnRdp2');
-var bntRodape2Clicado = false;
-
-bntRodape2.addEventListener('click', () => {
-if(bntRodape2Clicado == false) {
-  bntRodape2.classList.add('btnRdpClicado');
-  bntRodape2Clicado = true;
-  document.getElementById('secao-busca').style.display = 'block';
-  return;
-}
-else{
-  bntRodape2.classList.remove('btnRdpClicado');
-  document.getElementById('secao-busca').style.display = 'none';
-  bntRodape2Clicado = false;
-}
-});
-
-
-const bntRodape3 = document.querySelector('.btnRdp3');
-var bntRodape3Clicado = false;
-
-bntRodape3.addEventListener('click', () => {
-if(bntRodape3Clicado == false) {
-  bntRodape3.classList.add('btnRdpClicado');
-  document.getElementById('mapeamento').style.display = 'block';
-  bntRodape3Clicado = true;
-  return;
-}
-else{
-  bntRodape3.classList.remove('btnRdpClicado');
-  document.getElementById('mapeamento').style.display = 'none';
-  bntRodape3Clicado = false;
-}
-});
+    // mostra o conteúdo do botão que foi clicado
+    mostraConteudoDoBotao(btnRdpEl.id);
   });
-};
+}
 
 
+function mostraConteudoDoBotao(idBotao) {
+  switch (idBotao) {
+    case 'btn-mapa-campus':
+      document.body.classList.add('aba-mapa-ativa');
+      document.body.classList.remove('aba-busca-ativa');
+      document.body.classList.remove('aba-como-chegar-ativa');
+      break;
+      
+    case 'btn-lugares-campus':
+      document.body.classList.remove('aba-mapa-ativa');
+      document.body.classList.add('aba-busca-ativa');
+      document.body.classList.remove('aba-como-chegar-ativa');
+      break;
+      
+      case 'btn-como-chegar':
+      document.body.classList.remove('aba-mapa-ativa');
+      document.body.classList.remove('aba-busca-ativa');
+      document.body.classList.add('aba-como-chegar-ativa');
+      break;
+  }
+}

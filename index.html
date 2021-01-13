@@ -12,7 +12,7 @@
 <link href="pino-gps.css" rel="stylesheet">
 <link rel="shortcut icon" href="images/fav.png" />
 </head>
-<body class="mostrando-c1">
+<body class="mostrando-c1 aba-mapa-ativa">
 	<div id="container-principal">
 <div id="parte1">
 
@@ -45,7 +45,7 @@
 </div>
 
 <div id="parte2">
-	<div id="mapeamento" class="box" style="display:block">
+	<div id="mapeamento" class="box">
 		<div class="row" id="mapa1">
 			<div class="mapa-com-camadas">
 				<div id="marcador1"  class="marcador-posicao-usuario">
@@ -127,57 +127,68 @@
 		<button id="btn1" type="button" class="btn btn-outline-light">Campus Nova Suiça</button>
 		<button id="btn2" type="button" class="btn btn-outline-light">Campus Nova Gameleira</button>
 	</div>
-</div>
-<!--COMO CHEGAR?-->
-<div id="comoChegar" style="display:none">
-	<div id="comoChegarCampusI" style="display:none">
-		<h4>Endereço</h4>
-		<p>Av. Amazonas, 5253 - Nova Suíça, Belo Horizonte - MG</p>
-		<div class="comoChegarMapa">
-			<iframe class="comoChegarMapa"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8548874419494!2d-43.980661385978514!3d-19.93051898660347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa696ff215ab53d%3A0x6f66625e27c8ccc1!2sCentro%20Federal%20de%20Educa%C3%A7%C3%A3o%20Tecnol%C3%B3gica%20de%20Minas%20Gerais%20(CEFET-MG)!5e0!3m2!1spt-BR!2sbr!4v1609968151592!5m2!1spt-BR!2sbr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+	
+	<!--COMO CHEGAR?-->
+	<div id="como-chegar">
+		<div id="como-chegar-c1">
+			<h4>Endereço</h4>
+			<p>Av. Amazonas, 5253 - Nova Suíça, Belo Horizonte - MG</p>
+			<div class="como-chegar-mapa">
+				<iframe class="como-chegar-mapa"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8548874419494!2d-43.980661385978514!3d-19.93051898660347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa696ff215ab53d%3A0x6f66625e27c8ccc1!2sCentro%20Federal%20de%20Educa%C3%A7%C3%A3o%20Tecnol%C3%B3gica%20de%20Minas%20Gerais%20(CEFET-MG)!5e0!3m2!1spt-BR!2sbr!4v1609968151592!5m2!1spt-BR!2sbr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+			<h4>De ônibus:</h4>
+			<p>1505 - 1509 - 1680 - 2152 - 2550 - 30 - 415R - S41 - 2104</p>
+			<h4>De metrô:</h4>
+			<p>Linha 1</p>
 		</div>
-		<h4>De ônibus:</h4>
-		<p>1505 - 1509 - 1680 - 2152 - 2550 - 30 - 415R - S41 - 2104</p>
-		<h4>De metrô:</h4>
-		<p>Linha 1</p>
-	</div>
-
-	<div id="comoChegarCampusII" style="display:none">
-		<h4>Endereço</h4>
-		<p>Av. Amazonas, 7675 - Nova Gameleira, Belo Horizonte - MG</p>
-		<div class="comoChegarMapa">
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.6521049567214!2d-44.00136518597835!3d-19.93905998659863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6965ceade4c53%3A0x4980bb6236578f78!2sCEFET-MG%20-%20Campus%20Nova%20Gameleira!5e0!3m2!1spt-BR!2sbr!4v1609968364228!5m2!1spt-BR!2sbr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+	
+		<div id="como-chegar-c2">
+			<h4>Endereço</h4>
+			<p>Av. Amazonas, 7675 - Nova Gameleira, Belo Horizonte - MG</p>
+			<div class="como-chegar-mapa">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.6521049567214!2d-44.00136518597835!3d-19.93905998659863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6965ceade4c53%3A0x4980bb6236578f78!2sCEFET-MG%20-%20Campus%20Nova%20Gameleira!5e0!3m2!1spt-BR!2sbr!4v1609968364228!5m2!1spt-BR!2sbr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+			<h4>De ônibus:</h4>
+			<p>1270 - 1502 - 2550 - 30 - 3956 - 415R</p>
+			<h4>De metrô:</h4>
+			<p>Linha 1</p>
 		</div>
-		<h4>De ônibus:</h4>
-		<p>1270 - 1502 - 2550 - 30 - 3956 - 415R</p>
-		<h4>De metrô:</h4>
-		<p>Linha 1</p>
 	</div>
+	
+	<!--CAMPO DE PESQUISA-->
+	<section id="busca">
+		<label for="campo-de-busca">Pesquise por um local</label>
+		<div class="campo-e-botao">
+			<input type="search" id="campo-de-busca" placeholder="Digite o local desejado...">
+			<button type="button" class="btn btn-primary">🔍</button>
+		</div>
+	
+		<div id="resultados-da-busca" style="display: none;">
+			<p>Encontrados 4 resultados:</p>
+			<ul>
+				<li class="resultado-da-busca">
+					<button class="btn btn-link">Ir até lá</button>
+				</li>
+			</ul>
+		</div>
+	</section>
 </div>
-
-<!--CAMPO DE PESQUISA-->
-<section id="secao-busca" style="display:none">
-<label for="campo-de-busca">Pesquise por um local</label>
-<div class="campo-e-botao">
-  <input type="search" id="campo-de-busca" placeholder="Digite o local desejado...">
-  <button type="button" class="btn btn-primary">🔍</button>
-</div>
-<!--
-<div id="resultados-da-busca">
-  <p>Encontrados 4 resultados:</p>
-  <ul>
-	<li class="resultado-da-busca"> <button class="btn btn-link">Ir até lá</button></li>
-  </ul>
-</div>
--->
-</section>
 
 <!--PESQUISAS - MENU RODAPÉ-->
-<div class="opcoes">
-	<button id="imagens" class="btnRdp btnRdp3 btnRdpClicado"><img src="images/mapacampus.png" alt="" width="40%"><p class="btnRdpCor">MAPA CAMPUS</p></button>
-	<button id="imagens" class="btnRdp btnRdp2"><img src="images/lugaresnocampus.png" alt="" width="40%"><p></p>LUGARES CAMPUS</p></button>
-	<button id="imagens" class="btnRdp btnRdp1"><img src="images/comochegar.png" alt="" width="40%"><p>COMO CHEGAR?</p></button>
-</div>
+<footer class="opcoes">
+	<button id="btn-mapa-campus" class="btn-rodape btn-rodape-ativo">
+		<img src="images/mapacampus.png" alt="Ícone de mapa" width="40%">
+		<span>Mapa</span>
+	</button>
+	<button id="btn-lugares-campus" class="btn-rodape">
+		<img src="images/lugaresnocampus.png" alt="Ícone de busca" width="40%">
+		<span>Lugares</span>
+	</button>
+	<button id="btn-como-chegar" class="btn-rodape">
+		<img src="images/comochegar.png" alt="Ícone de caminhos" width="40%">
+		<span>Como chegar?</span>
+	</button>
+</footer>
 </div>
 
 
