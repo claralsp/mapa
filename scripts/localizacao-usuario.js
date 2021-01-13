@@ -31,31 +31,31 @@ const triangulacoes = {
   },
   novaSuica: {
     latitudeLongitude: {
-      A: { // alguns metros depois da portaria da Rua Alpes
-        x: -19.930603337917294,
-        y: -43.97760830731792
+      A: { // meio da obra de arte na amazonas
+        x: -19.930120919621533,
+        y: -43.979031681148165
       },
-      B: { // espaço entre a parte de trás do ginásio e a R. Tobias Barreto
-        x: -19.9297477097802,
-        y: -43.97599093531417
+      B: { // meio do prédio atrás do ginásio
+        x: -19.929723710211455,
+        y: -43.97609730405467
       },
-      C: { // calçada atrás do DEMAT
-        x: -19.930383330390164,
-        y: -43.97935612221241
+      C: { // caixa d'água do bandeijão
+        x: -19.930579049671913,
+        y: -43.978504629912266
       }
     },
     mapinha: {
       A: {
-        x: 0.033217672,
-        y: 0.036893966
+        x: 0.144375554,
+        y: 0.397344229
       },
       B: {
-        x: 0.033216245,
-        y: 0.036892609
+        x: 0.916740478,
+        y: 0.477017365
       },
       C: {
-        x: 0.033217305,
-        y: 0.036895443
+        x: 0.251550044,
+        y: 0.567926456
       }
     }
   }
@@ -122,11 +122,11 @@ function encontrouPosicao(gps) {
   if (campusAtual == 'novaGameleira') {
     const marcador2El = document.querySelector('#marcador2');
     marcador2El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-    marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho))`;
+    marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
   } else {
     const marcador1El = document.querySelector('#marcador1');
     marcador1El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-    marcador1El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho))`;
+    marcador1El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
   }
 
 }
