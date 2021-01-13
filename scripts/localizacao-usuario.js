@@ -63,18 +63,6 @@ const triangulacoes = {
 
 let campusAtual = 'novaSuica';
 
-const btns = document.getElementById('btn1');
-btns.addEventListener('click', () => {
-  campusAtual = 'novaSuica';
-  return campusAtual;
-});
-
-const btng = document.getElementById('btn2');
-btng.addEventListener('click', () => {
-  campusAtual = 'novaGameleira';
-  return campusAtual;
-});
-
 function converteParaCoordenadasBaricentricas(x, y, A, B, C) {
   const origem = B;
   const base1 = {
@@ -128,16 +116,17 @@ function converteLatLonParaPorcentagem(latitude, longitude, campusAtual) {
 }
 
 function encontrouPosicao(gps) {
+  campusAtual = document.body.classList.contains('mostrando-c1') ? 'novaSuica' : 'novaGameleira';
   const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, campusAtual);
 
   if (campusAtual == 'novaGameleira') {
     const marcador2El = document.querySelector('#marcador2');
     marcador2El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-    marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) / 2)`;
+    marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho))`;
   } else {
     const marcador1El = document.querySelector('#marcador1');
     marcador1El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-    marcador1El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) / 2)`;
+    marcador1El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho))`;
   }
 
 }

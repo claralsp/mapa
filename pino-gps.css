@@ -2,8 +2,10 @@
     --tamanho: 30px;
     position: absolute;
     left: calc(50% - var(--tamanho) / 2);
-    top: calc(50% - var(--tamanho) / 2);
+    top: calc(50% - var(--tamanho));
     z-index: 200;
+    width: var(--tamanho);
+    height: var(--tamanho);
 }
 
 .pino-gps {
@@ -16,7 +18,7 @@
     left: 50%;
     top: 50%;
     transform: rotate(-45deg);
-    margin: calc(var(--tamanho) * -0.6667) 0 0 calc(var(--tamanho) * -0.6667);
+    margin: calc(var(--tamanho) * -0.5) 0 0 calc(var(--tamanho) * -0.5);
     animation-name: quicar;
     animation-fill-mode: both;
     animation-duration: 1s;
@@ -25,12 +27,12 @@
 .pulsacao {
     background: rgba(0,0,0,0.2);
     border-radius: 50%;
-    height: calc(var(--tamanho) * 0.466667);
-    width: calc(var(--tamanho) * 0.466667);
+    height: calc(var(--tamanho) * 0.5);
+    width: calc(var(--tamanho) * 0.5);
     position: absolute;
     left: 50%;
     top: 50%;
-    margin: calc(var(--tamanho) * 0.366667) 0px 0px calc(var(--tamanho) * -0.4);
+    margin: calc(var(--tamanho) * 0.5) 0px 0px calc(var(--tamanho) * -0.225);
     transform: rotateX(55deg);
     z-index: 200;
 }
@@ -41,7 +43,7 @@
     height: calc(var(--tamanho) * 1.33333);
     width: calc(var(--tamanho) * 1.33333);
     position: absolute;
-    margin: calc(var(--tamanho) * -0.43333) 0 0 calc(var(--tamanho) * -0.43333);
+    margin: calc(var(--tamanho) * -0.5) 0 0 calc(var(--tamanho) * -0.5);
     animation: pulsar 1s ease-out;
     animation-iteration-count: infinite;
     opacity: 0;
