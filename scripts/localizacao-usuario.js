@@ -60,13 +60,21 @@ const triangulacoes = {
     }
   }
 };
+
 let campusAtual = 'novaSuica';
 
-  const btng = document.getElementById('btn2');
-  btng.addEventListener('click', () => {
-    campusAtual = 'novaGameleira';
-  });
-  
+const btns = document.getElementById('btn1');
+btns.addEventListener('click', () => {
+  campusAtual = 'novaSuica';
+  return campusAtual;
+});
+
+const btng = document.getElementById('btn2');
+btng.addEventListener('click', () => {
+  campusAtual = 'novaGameleira';
+  return campusAtual;
+});
+
 function converteParaCoordenadasBaricentricas(x, y, A, B, C) {
   const origem = B;
   const base1 = {
