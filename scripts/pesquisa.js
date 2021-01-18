@@ -199,6 +199,18 @@ const lugaresDeInteresse = {
       longitude:  -43.99934145870826,
       nome: 'Núcleo de Tecnologia de Informação',
     },
+    {
+      predio: '20',
+      latitude: 33,
+      longitude: 12,
+      nome: 'Lanchonete',
+    },
+    {
+      predio: 'Biblioteca',
+      latitude: 33,
+      longitude: 12,
+      nome: 'Biblioteca',
+    },
     /*
     {
       predio: 'Biblioteca',
@@ -383,7 +395,7 @@ const lugaresDeInteresse = {
     nome: 'Banheiros Masculinos - 4° andar',
   },
 
-    
+
     ],
     novaSuica: [
       {
@@ -560,7 +572,7 @@ const lugaresDeInteresse = {
         longitude: 33,
         nome: 'Vestiário masculino',
       },
-      
+
       {
         predio: 'principal',
         latitude: 33,
@@ -665,3 +677,33 @@ const lugaresDeInteresse = {
       },
     ],
 }
+
+const campoBuscaEl = document.querySelector('#campo-de-busca')
+
+campoBuscaEl.addEventListener('input', () => {
+  let textoDigitado = campoBuscaEl.value.toLowerCase();
+  let resultados = []
+
+  for(let lugar of lugaresDeInteresse.novaGameleira) {
+    if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
+        resultados.push(lugar)
+    }
+  }
+
+    const resultadosEl = document.querySelector('#resultados-da-busca')
+    resultadosEl.querySelector('p').innerHTML = `Encontrados ${resultados.length} resultados`
+    const resultadosUlEl = resultadosEl.querySelector('ul')
+    resultadosUlEl.innerHTML = ''
+    for (let resultado of resultados) {
+      resultadosUlEl.innerHTML += `
+      <li class="resultado-da-busca">
+        ${resultado.nome}
+        <button class="btn btn-link"
+          data-latitude="${resultado.latitude}"
+          data-longitude="${resultado.longitude}">
+          Mostrar no mapa
+        </button>
+      </li>`
+    }
+
+})

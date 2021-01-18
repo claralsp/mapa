@@ -25,7 +25,7 @@
 					<span class="navbar-toggler-icon"></span>
 					</button>
 			</div>
-			
+
 			<h1 class="navbar-brand" id="titulopagina">M.CEFET</h1>
 			<img id="cefetlogo" src="images/cabecalho.png">
 
@@ -174,6 +174,22 @@
 	</section>
 </div>
 
+<!--CAMPO DE PESQUISA-->
+<section id="secao-busca" style="display:none">
+<label for="campo-de-busca">Pesquise por um local</label>
+<div class="campo-e-botao">
+  <input type="search" id="campo-de-busca" placeholder="Digite o local desejado...">
+  <button type="button" class="btn btn-primary">🔍</button>
+</div>
+
+<div id="resultados-da-busca">
+  <p>Encontrados 4 resultados:</p>
+  <ul>
+	<li class="resultado-da-busca"> <button class="btn btn-link">Ir até lá</button></li>
+  </ul>
+</div>
+</section>
+
 <!--PESQUISAS - MENU RODAPÉ-->
 <footer class="opcoes">
 	<button id="btn-mapa-campus" class="btn-rodape btn-rodape-ativo">
@@ -204,6 +220,7 @@
 <script src="scripts/zoom-no-mapa.js"></script>
 <script src="scripts/localizacao-usuario.js"></script>
 <script src="scripts/identifica-campus.js"></script>
+<script src="scripts/pesquisa.js"></script>
 
 
 </body>
