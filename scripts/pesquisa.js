@@ -187,13 +187,19 @@ const lugaresDeInteresse = {
       longitude: -43.99943823513284,
       nome: 'Biblioteca',
     },
-    /*
     {
-      predio: 'Biblioteca',
-      latitude: 33,
-      longitude: 12,
+      predio: 'Principal',
+      latitude: -19.939036663396557,
+      longitude:  -43.99934145870826,
       nome: 'Departamento de Ciências Sociais Aplicadas',
     },
+    {
+      predio: 'Principal',
+      latitude: -19.939036663396557,
+      longitude:  -43.99934145870826,
+      nome: 'Núcleo de Tecnologia de Informação',
+    },
+    /*
     {
       predio: 'Biblioteca',
       latitude: 33,
@@ -212,12 +218,7 @@ const lugaresDeInteresse = {
       longitude: 12,
       nome: 'Departamento de Engenharia Elétrica',
     },
-        {
-      predio: 'Biblioteca',
-      latitude: 33,
-      longitude: 12,
-      nome: 'Departamento de Engenharia Mecânica',
-    },
+
     {
       predio: 'Biblioteca',
       latitude: 33,
@@ -231,6 +232,18 @@ const lugaresDeInteresse = {
       nome: 'Departamento de Matemática',
     },
     */
+   {
+    predio: 'Principal',
+    latitude: -19.93919803461888,
+    longitude:  -43.998837203410396,
+    nome: 'Departamento de Engenharia Mecânica',
+    },
+    {
+      predio: 'Principal',
+      latitude: -19.93873787405462, 
+      longitude:  -43.9987594193494,
+      nome: 'Caixa',
+      },
     {
       predio: '20',
       latitude: -19.938977825631213,
@@ -251,45 +264,45 @@ const lugaresDeInteresse = {
     },
     {
       predio: 'Principal',
-      latitude: 33,
-      longitude: 12,
+      latitude: -19.938821081269026, 
+      longitude: -43.99881172242553,
       nome: 'Secretaria',
     },
     {
       predio: 'Principal',
-      latitude: 33,
-      longitude: 12,
+      latitude: -19.93865340607859, 
+      longitude: -43.99908128443195,
       nome: 'Fila do Intercampi',
     },
     {
       predio: '20',
-      latitude: 33,
-      longitude: 12,
-      nome: 'Sala dos Professores',
+      latitude: -19.938833688421035, 
+      longitude: -43.99979139926905,
+      nome: 'Sala dos Professores - 2° andar',
     },
     {
       predio: '20',
-      latitude: 33,
-      longitude: 12,
-      nome: 'Sala da coordenação',
+      latitude: -19.93890680987047, 
+      longitude: -43.99988527658518,
+      nome: 'Sala da coordenação - 1° andar',
     },
     {
       predio: '20',
-      latitude: 33,
-      longitude: 12,
+      latitude: -19.93885575093089,
+      longitude:  -43.99981755080712,
       nome: 'Auditório 1 - 2° andar',
     },
     {
       predio: '20',
-      latitude: 33,
-      longitude: 12,
-      nome: 'Auditório - 1° andar',
+      latitude: -19.93885070807176, 
+      longitude: -43.99978201153745,
+      nome: 'Auditório 2 - 2° andar',
     },
     {
       predio: '20',
-      latitude: 33,
-      longitude: 12,
-      nome: 'Sala dos Professores',
+      latitude: -19.939028468758718, 
+      longitude: -44.00006632569487,
+      nome: 'Auditório - 1° andar',
     },
     {
       predio: 'Principal',
