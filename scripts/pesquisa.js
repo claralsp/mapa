@@ -394,11 +394,6 @@ const lugaresDeInteresse = {
     longitude: -43.99896230003243,
     nome: 'Banheiros Masculinos - 4° andar',
   },
-<<<<<<< Updated upstream
-
-
-=======
->>>>>>> Stashed changes
     ],
     novaSuica: [
       {
