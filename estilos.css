@@ -591,6 +591,13 @@ figure{
 	padding-bottom: 5px;
 }
 
+
+@media screen and (orientation: landscape) {
+	#como-chegar p{
+		font-size: 17px;
+	}
+}
+
 body.mostrando-c1 #como-chegar-c2 {
 	display: none;
 }
