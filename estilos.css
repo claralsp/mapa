@@ -581,7 +581,12 @@ figure{
 	margin-left: 10px;
 	margin-right: 10px;
 }
-
+#como-chegar a{
+	color: white;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+}
 .como-chegar-mapa{
 	justify-content: center;
 	align-items: center;
@@ -590,7 +595,6 @@ figure{
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
-
 
 @media screen and (orientation: landscape) {
 	#como-chegar p{
