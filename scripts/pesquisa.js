@@ -728,7 +728,7 @@ botaoPesquisaEl.addEventListener('click', () => {
   let textoDigitado = campoBuscaEl.value.toLowerCase();
   let resultados = []
 
-  if(classeBody == "aba-busca-ativa mostrando-c1") {
+  if(bodyEl.classList.contains('mostrando-c1')) {
     for(let lugar of lugaresDeInteresse.novaSuica) {
       if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
           resultados.push(lugar)
@@ -748,7 +748,7 @@ botaoPesquisaEl.addEventListener('click', () => {
           </button>
         </li>`
       }
-  } else if (classeBody == "aba-busca-ativa mostrando-c2") {
+  } else if (bodyEl.classList.contains('mostrando-c2')) {
     for(let lugar of lugaresDeInteresse.novaGameleira) {
       if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
           resultados.push(lugar)
