@@ -192,6 +192,16 @@ ul.links-escolares li a:before{
 }
 }
 
+@media screen and (orientation : landscape){
+	#titulopagina{
+		font-family: titulo;
+		text-decoration: none;
+		font-size: 25px;
+		margin-left: 10%;
+		margin-right: auto;
+	}
+}
+
 #cefetlogo{
 	width: 4%;
 	margin-top: -0.5%;
@@ -571,7 +581,12 @@ figure{
 	margin-left: 10px;
 	margin-right: 10px;
 }
-
+#como-chegar a{
+	color: white;
+	text-align: center;
+	margin-left: 10px;
+	margin-right: 10px;
+}
 .como-chegar-mapa{
 	justify-content: center;
 	align-items: center;
@@ -579,6 +594,12 @@ figure{
 	flex-direction: row;
 	padding-top: 5px;
 	padding-bottom: 5px;
+}
+
+@media screen and (orientation: landscape) {
+	#como-chegar p{
+		font-size: 17px;
+	}
 }
 
 body.mostrando-c1 #como-chegar-c2 {
@@ -648,4 +669,15 @@ body.aba-como-chegar-ativa #busca {
 	background-color: #161142;
 	color: #ffffff;
 	border-color: #ffffff;
+}
+
+@media screen and (orientation : landscape){
+	.btn-rodape{
+		width: 100%;
+		height: 100%;
+		padding-top: 0%;
+		padding-bottom: 0%;
+		margin-top: 0%;
+		margin-bottom: 0%;
+	}
 }
