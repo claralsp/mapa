@@ -63,91 +63,91 @@ const lugaresDeInteresse = {
     },
     {
       predio: 'Refeitório Escolar - Bandex',
-      latitude: -19.939125306501676, 
+      latitude: -19.939125306501676,
       longitude: -43.99966838561999,
       nome: 'Loja de utilitários e xerox',
     },
     {
       predio: '20',
-      latitude: -19.938910985209148, 
+      latitude: -19.938910985209148,
       longitude: -43.999932583208,
       nome: 'Prédio 20',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Masculino no prédio 20 - 1° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Masculino no prédio 20 - 2° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Masculino no prédio 20 - 3° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Masculino no prédio 20 - 4° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Feminino no prédio 20 - 1° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Feminino no prédio 20 - 2° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Feminino no prédio 20 - 3° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Feminino no prédio 20 - 4° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Feminino no prédio 20 - 1° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Feminino no prédio 20 - 2° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Feminino no prédio 20 - 3° andar',
     },
     {
       predio: '20',
-      latitude: -19.938852361980516, 
+      latitude: -19.938852361980516,
       longitude: -43.999851446385705,
       nome: 'Banheiro Feminino no prédio 20 - 4° andar',
     },
     {
       predio: '12',
-      latitude: -19.939852227055187, 
+      latitude: -19.939852227055187,
       longitude: -43.998451013747086,
       nome: 'Prédio 12',
     },
@@ -159,13 +159,13 @@ const lugaresDeInteresse = {
     },
     {
       predio: '19',
-      latitude: -19.939817651575616, 
+      latitude: -19.939817651575616,
       longitude: -43.99940577614502,
       nome: 'Banheiro Masculino no prédio 19 - 1° andar',
     },
     {
       predio: '19',
-      latitude: -19.93981260874721, 
+      latitude: -19.93981260874721,
       longitude: -43.99940309393598,
       nome: 'Banheiro Feminino no prédio 19 - 1° andar',
     },
@@ -177,13 +177,13 @@ const lugaresDeInteresse = {
     },
     {
       predio: 'Lanchonete',
-      latitude: -19.93978061119736, 
+      latitude: -19.93978061119736,
       longitude: -43.999215611783754,
       nome: 'Lanchonete',
     },
     {
       predio: 'Biblioteca',
-      latitude: -19.939413114563834, 
+      latitude: -19.939413114563834,
       longitude: -43.99943823513284,
       nome: 'Biblioteca',
     },
@@ -252,7 +252,7 @@ const lugaresDeInteresse = {
     },
     {
       predio: 'Principal',
-      latitude: -19.93873787405462, 
+      latitude: -19.93873787405462,
       longitude:  -43.9987594193494,
       nome: 'Caixa',
       },
@@ -270,31 +270,31 @@ const lugaresDeInteresse = {
     },
     {
       predio: '20',
-      latitude: -19.938859318486116, 
+      latitude: -19.938859318486116,
       longitude: -43.99976215225419,
       nome: 'Secretaria',
     },
     {
       predio: 'Principal',
-      latitude: -19.938821081269026, 
+      latitude: -19.938821081269026,
       longitude: -43.99881172242553,
       nome: 'Secretaria',
     },
     {
       predio: 'Principal',
-      latitude: -19.93865340607859, 
+      latitude: -19.93865340607859,
       longitude: -43.99908128443195,
       nome: 'Fila do Intercampi',
     },
     {
       predio: '20',
-      latitude: -19.938833688421035, 
+      latitude: -19.938833688421035,
       longitude: -43.99979139926905,
       nome: 'Sala dos Professores - 2° andar',
     },
     {
       predio: '20',
-      latitude: -19.93890680987047, 
+      latitude: -19.93890680987047,
       longitude: -43.99988527658518,
       nome: 'Sala da coordenação - 1° andar',
     },
@@ -306,25 +306,25 @@ const lugaresDeInteresse = {
     },
     {
       predio: '20',
-      latitude: -19.93885070807176, 
+      latitude: -19.93885070807176,
       longitude: -43.99978201153745,
       nome: 'Auditório 2 - 2° andar',
     },
     {
       predio: '20',
-      latitude: -19.939028468758718, 
+      latitude: -19.939028468758718,
       longitude: -44.00006632569487,
       nome: 'Auditório - 1° andar',
     },
     {
       predio: 'Principal',
-      latitude: -19.938612166605928, 
+      latitude: -19.938612166605928,
       longitude: -43.998802708594745,
       nome: 'Achados e perdidos',
     },
     {
       predio: 'Principal',
-      latitude: -19.938658813117144, 
+      latitude: -19.938658813117144,
       longitude: -43.998833553998615,
       nome: 'Diretoria',
     },
@@ -336,7 +336,7 @@ const lugaresDeInteresse = {
     },
     {
       predio: 'Principal',
-      latitude: -19.938929866901866, 
+      latitude: -19.938929866901866,
       longitude: -43.99870212575583,
       nome: 'Laboratórios de equipamentos biomédicos',
     },
@@ -394,7 +394,7 @@ const lugaresDeInteresse = {
     longitude: -43.99896230003243,
     nome: 'Banheiros Masculinos - 4° andar',
   },
-<<<<<<< HEAD
+/*<<<<<<< HEAD
 
 
 =======
@@ -404,18 +404,18 @@ const lugaresDeInteresse = {
     longitude: -43.999733974271564,
     nome: 'Banco do Brasil',
   },
->>>>>>> master
+>>>>>>> master*/
     ],
     novaSuica: [
       {
         predio: 'principal',
-        latitude: -19.930288922152226, 
+        latitude: -19.930288922152226,
         longitude: -43.97680505927631,
         nome: 'Laboratório de fisíca - 1',
       },
       {
         predio: 'principal',
-        latitude: -19.930288922152226, 
+        latitude: -19.930288922152226,
         longitude: -43.97680505927631,
         nome: 'Laboratório de fisíca - 2',
       },
@@ -521,43 +521,43 @@ const lugaresDeInteresse = {
       */
       {
         predio: 'principal',
-        latitude: -19.93031265579131, 
+        latitude: -19.93031265579131,
         longitude: -43.97718571226811,
         nome: 'Sala de Arte - 1',
       },
       {
         predio: 'principal',
-        latitude: -19.93031265579131, 
+        latitude: -19.93031265579131,
         longitude: -43.97718571226811,
         nome: 'Sala de Arte - 2',
       },
       {
         predio: 'principal',
-        latitude: -19.929785647639566, 
+        latitude: -19.929785647639566,
         longitude: -43.976322040962984,
         nome: 'Ginásio',
       },
       {
         predio: 'principal',
-        latitude: -19.929616702072018, 
+        latitude: -19.929616702072018,
         longitude: -43.97631131212685,
         nome: 'Banheiros - Ginásio',
       },
       {
         predio: 'principal',
-        latitude: -19.930185316662424, 
+        latitude: -19.930185316662424,
         longitude: -43.97657953302899,
         nome: 'Banheiros - térreo',
       },
       {
         predio: 'principal',
-        latitude: -19.93026222446574, 
+        latitude: -19.93026222446574,
         longitude: -43.97670827906137,
         nome: 'Banheiros - todos os andares',
       },
       {
         predio: 'principal',
-        latitude: -19.930355522411524, 
+        latitude: -19.930355522411524,
         longitude: -43.97705160181509,
         nome: 'Banheiros - todos os andares',
       },
@@ -569,44 +569,44 @@ const lugaresDeInteresse = {
       },
       {
         predio: 'principal',
-        latitude: -19.930526988755677, 
+        latitude: -19.930526988755677,
         longitude: -43.97778384487371,
         nome: 'Banheiros - todos os andares',
       },
       {
         predio: 'principal',
-        latitude: -19.929920744727383, 
+        latitude: -19.929920744727383,
         longitude: -43.97637387429865,
         nome: 'Vestiário feminino',
       },
       {
         predio: 'principal',
-        latitude: -19.92988418192725, 
+        latitude: -19.92988418192725,
         longitude: -43.97624781047413,
         nome: 'Vestiário masculino',
       },
 
       {
         predio: 'principal',
-        latitude: -19.930591947107548, 
+        latitude: -19.930591947107548,
         longitude: -43.97867837869264,
         nome: 'Refeitório Escolar - Bandeijão',
       },
       {
         predio: 'principal',
-        latitude: -19.930583121647093, 
+        latitude: -19.930583121647093,
         longitude: -43.9780172141678,
         nome: 'Grêmio',
       },
       {
         predio: 'principal',
-        latitude: -19.930541242179505, 
+        latitude: -19.930541242179505,
         longitude: -43.97882080145821,
         nome: 'Biblioteca',
       },
       {
         predio: 'principal',
-        latitude: -19.930460552160774, 
+        latitude: -19.930460552160774,
         longitude: -43.9774931079935,
         nome: 'Enfermaria - Smood',
       },
@@ -618,7 +618,7 @@ const lugaresDeInteresse = {
       },
       {
         predio: 'principal',
-        latitude: -19.93005963938959, 
+        latitude: -19.93005963938959,
         longitude: -43.97785809280009,
         nome: 'Auditório',
       },
@@ -630,43 +630,43 @@ const lugaresDeInteresse = {
       },
       {
         predio: 'principal',
-        latitude: -19.929936397606227, 
+        latitude: -19.929936397606227,
         longitude: -43.97813100756898,
         nome: 'Fila do intercampi',
       },
       {
         predio: 'principal',
-        latitude: -19.930476466210152, 
+        latitude: -19.930476466210152,
         longitude: -43.977725374228456,
         nome: 'Achados e perdidos',
       },
       {
         predio: 'principal',
-        latitude: -19.929655695223126, 
+        latitude: -19.929655695223126,
         longitude: -43.97644528997514,
         nome: 'Achados e perdidos - 2',
       },
       {
         predio: 'principal',
-        latitude: -19.930236287123147, 
+        latitude: -19.930236287123147,
         longitude: -43.97660689306783,
         nome: 'Laboratório de Química - Microbiologia',
       },
       {
         predio: 'principal',
-        latitude: -19.930280414541162, 
+        latitude: -19.930280414541162,
         longitude: -43.97681945813364,
         nome: 'Laboratório de Química - Fisíco-Quimíca',
       },
       {
         predio: 'principal',
-        latitude: -19.930335258601954, 
+        latitude: -19.930335258601954,
         longitude: -43.977001177794435,
         nome: 'Laboratório de Química - Mineralogia',
       },
       {
         predio: 'principal',
-        latitude: -19.930342192906974, 
+        latitude: -19.930342192906974,
         longitude: -43.97701727104863,
         nome: 'Laboratório de Química - Inorgânica',
       },
@@ -678,31 +678,31 @@ const lugaresDeInteresse = {
       },
       {
         predio: 'principal',
-        latitude: -19.930420361415855, 
+        latitude: -19.930420361415855,
         longitude: -43.977316337354175,
         nome: 'Laboratório de Química - Analítica',
       },
       {
         predio: 'principal',
-        latitude: -19.930381907557766, 
+        latitude: -19.930381907557766,
         longitude: -43.97721977782901,
         nome: 'Laboratório de Química - Processos Industriais',
       },
       {
         predio: 'principal',
-        latitude: -19.930042756727605, 
+        latitude: -19.930042756727605,
         longitude: -43.97779041779649,
         nome: 'Caixa Econômica',
       },
       {
         predio: 'principal',
-        latitude: -19.930603921591366, 
+        latitude: -19.930603921591366,
         longitude: -43.978565517239346,
         nome: 'Loja',
       },
       {
         predio: 'principal',
-        latitude: -19.93062094212876, 
+        latitude: -19.93062094212876,
         longitude: -43.97865201848064,
         nome: 'Xerox',
       },
@@ -716,31 +716,57 @@ const lugaresDeInteresse = {
 }
 
 const campoBuscaEl = document.querySelector('#campo-de-busca')
+let botaoPesquisaEl = document.querySelector('#botao-pesquisa')
+let secaoBuscaEl = document.querySelector('#secao-busca')
 
-campoBuscaEl.addEventListener('input', () => {
+botaoPesquisaEl.addEventListener('click', () => {
+  const resultadosEl = document.querySelector('#resultados-da-busca')
+
+  let bodyEl = document.querySelector("body");
+  let classeBody = bodyEl.classList;
+
   let textoDigitado = campoBuscaEl.value.toLowerCase();
   let resultados = []
 
-  for(let lugar of lugaresDeInteresse.novaGameleira) {
-    if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
-        resultados.push(lugar)
+  if(classeBody == "aba-busca-ativa mostrando-c1") {
+    for(let lugar of lugaresDeInteresse.novaSuica) {
+      if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
+          resultados.push(lugar)
+      }
     }
+      resultadosEl.querySelector('p').innerHTML = `Encontrados ${resultados.length} resultados`
+      const resultadosUlEl = resultadosEl.querySelector('ul')
+      resultadosUlEl.innerHTML = ''
+      for (let resultado of resultados) {
+        resultadosUlEl.innerHTML += `
+        <li class="resultado-da-busca">
+          ${resultado.nome}
+          <button class="btn btn-link"
+            data-latitude="${resultado.latitude}"
+            data-longitude="${resultado.longitude}">
+            Mostrar no mapa
+          </button>
+        </li>`
+      }
+  } else if (classeBody == "aba-busca-ativa mostrando-c2") {
+    for(let lugar of lugaresDeInteresse.novaGameleira) {
+      if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
+          resultados.push(lugar)
+      }
+    }
+      resultadosEl.querySelector('p').innerHTML = `Encontrados ${resultados.length} resultados`
+      const resultadosUlEl = resultadosEl.querySelector('ul')
+      resultadosUlEl.innerHTML = ''
+      for (let resultado of resultados) {
+        resultadosUlEl.innerHTML += `
+        <li class="resultado-da-busca">
+          ${resultado.nome}
+          <button class="btn btn-link"
+            data-latitude="${resultado.latitude}"
+            data-longitude="${resultado.longitude}">
+            Mostrar no mapa
+          </button>
+        </li>`
+      }
   }
-
-    const resultadosEl = document.querySelector('#resultados-da-busca')
-    resultadosEl.querySelector('p').innerHTML = `Encontrados ${resultados.length} resultados`
-    const resultadosUlEl = resultadosEl.querySelector('ul')
-    resultadosUlEl.innerHTML = ''
-    for (let resultado of resultados) {
-      resultadosUlEl.innerHTML += `
-      <li class="resultado-da-busca">
-        ${resultado.nome}
-        <button class="btn btn-link"
-          data-latitude="${resultado.latitude}"
-          data-longitude="${resultado.longitude}">
-          Mostrar no mapa
-        </button>
-      </li>`
-    }
-
 })
