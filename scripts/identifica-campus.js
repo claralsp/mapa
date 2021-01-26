@@ -30,15 +30,11 @@ function localizarCampus(geoLocalizacao)
         userDentroCampus = x>=campus.latMinima && x<=campus.latMaxima && y>=campus.longMinima && y<=campus.longMaxima;
         if(userDentroCampus) {
           campusUser = campus;
-          alert("Voce esta no " + campusUser.nome);
           break;
         }       
     }
 
-    if(campusUser == null) {
-        alert("Voce nao esta em nenhum campus");
-    }
-    else { 
+    if(campusUser != null) { 
         if(campusUser.nome == "campus1") {
             bodyEl.classList.add('usuario-no-c1');
         }
