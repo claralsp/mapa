@@ -719,7 +719,11 @@ const campoBuscaEl = document.querySelector('#campo-de-busca')
 let botaoPesquisaEl = document.querySelector('#botao-pesquisa')
 let secaoBuscaEl = document.querySelector('#secao-busca')
 
-botaoPesquisaEl.addEventListener('click', () => {
+botaoPesquisaEl.addEventListener('click', fazPesquisa);
+campoBuscaEl.addEventListener('input', fazPesquisa);
+
+
+function fazPesquisa() {
   const resultadosEl = document.querySelector('#resultados-da-busca')
 
   let bodyEl = document.querySelector("body");
@@ -728,17 +732,17 @@ botaoPesquisaEl.addEventListener('click', () => {
   let textoDigitado = campoBuscaEl.value.toLowerCase();
   let resultados = []
 
-  if(bodyEl.classList.contains('mostrando-c1')) {
-    for(let lugar of lugaresDeInteresse.novaSuica) {
+  if (bodyEl.classList.contains('mostrando-c1')) {
+    for (let lugar of lugaresDeInteresse.novaSuica) {
       if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
-          resultados.push(lugar)
+        resultados.push(lugar)
       }
     }
-      resultadosEl.querySelector('p').innerHTML = `Encontrados ${resultados.length} resultados`
-      const resultadosUlEl = resultadosEl.querySelector('ul')
-      resultadosUlEl.innerHTML = ''
-      for (let resultado of resultados) {
-        resultadosUlEl.innerHTML += `
+    resultadosEl.querySelector('p').innerHTML = `Encontrados ${resultados.length} resultados`
+    const resultadosUlEl = resultadosEl.querySelector('ul')
+    resultadosUlEl.innerHTML = ''
+    for (let resultado of resultados) {
+      resultadosUlEl.innerHTML += `
         <li class="resultado-da-busca">
           ${resultado.nome}
           <button class="btn btn-link"
@@ -747,18 +751,18 @@ botaoPesquisaEl.addEventListener('click', () => {
             Mostrar no mapa
           </button>
         </li>`
-      }
+    }
   } else if (bodyEl.classList.contains('mostrando-c2')) {
-    for(let lugar of lugaresDeInteresse.novaGameleira) {
+    for (let lugar of lugaresDeInteresse.novaGameleira) {
       if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
-          resultados.push(lugar)
+        resultados.push(lugar)
       }
     }
-      resultadosEl.querySelector('p').innerHTML = `Encontrados ${resultados.length} resultados`
-      const resultadosUlEl = resultadosEl.querySelector('ul')
-      resultadosUlEl.innerHTML = ''
-      for (let resultado of resultados) {
-        resultadosUlEl.innerHTML += `
+    resultadosEl.querySelector('p').innerHTML = `Encontrados ${resultados.length} resultados`
+    const resultadosUlEl = resultadosEl.querySelector('ul')
+    resultadosUlEl.innerHTML = ''
+    for (let resultado of resultados) {
+      resultadosUlEl.innerHTML += `
         <li class="resultado-da-busca">
           ${resultado.nome}
           <button class="btn btn-link"
@@ -767,6 +771,6 @@ botaoPesquisaEl.addEventListener('click', () => {
             Mostrar no mapa
           </button>
         </li>`
-      }
+    }
   }
-})
+}
