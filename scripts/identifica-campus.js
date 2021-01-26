@@ -1,22 +1,23 @@
 navigator.geolocation.getCurrentPosition(localizarCampus);
 let id = navigator.geolocation.watchPosition(acompanharPosicao);
 
+
 let campi = [
     {
         nome: "campus1",
-        latMinima: -19.930157556478836,
-        latMaxima: -19.93020565209033,
-        longMinima: -43.97588977591026,
-        longMaxima: -43.979443789664685
+        latMinima: -19.931815506981785,
+        latMaxima: -19.928971182124805,
+        longMinima: -43.97855065037827,
+        longMaxima: -43.9760079163305
     },
     {
         nome: "campus2",
-        latMinima: -19.938062048585753,
-        latMaxima: -19.940278127250064,
-        longMinima: -43.997893198166366,
-        longMaxima: -44.000726569341225
+        latMinima: -19.941016184384264,
+        latMaxima: -19.9376526075887,
+        longMinima: -44.00112230991754,
+        longMaxima: -43.99764616716641
     }
-]
+];
 
 function localizarCampus(geoLocalizacao) 
 {
