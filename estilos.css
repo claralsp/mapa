@@ -183,13 +183,13 @@ ul.links-escolares li a:before{
 }
 
 @media screen and (orientation:portrait){
-#titulopagina{
-	font-family: titulo;
-	text-decoration: none;
-	font-size: 22px;
-	margin-left: 5%;
-	margin-right: auto;
-}
+	#titulopagina{
+		font-family: titulo;
+		text-decoration: none;
+		font-size: 22px;
+		margin-left: 5%;
+		margin-right: auto;
+	}
 }
 
 @media screen and (orientation : landscape){
@@ -284,7 +284,7 @@ li{
   		width: 100%;
 	}
 	#menu_icon {
-  	width: 10%;
+  		width: 10%;
 }
 
 	#menuedit #menu-button {
@@ -367,6 +367,7 @@ li{
 }
 
 @media screen and (orientation: landscape) {
+	
 	.images-mapa {
 		margin-left: auto;
 		margin-right: auto;
@@ -401,6 +402,15 @@ body.mostrando-c2 #btn2,
 
 .camada {
 	max-width: 100%;
+}
+
+@media screen and (orientation: landscape) {
+
+	.camada {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 .camada:not(.base) {
