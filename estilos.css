@@ -263,36 +263,36 @@ li{
 }
 
 @media screen and (orientation: portrait) {
-html, body{
-width: 100%;
-}
-#menuedit ul li {
-width: 100%;
-}
+	html, body{
+		width: 100%;
+	}
+	#menuedit ul li {
+		width: 100%;
+	}
 
-#menuedit #menu-button {
-display: block;
-padding: 2px;
-color: #dddddd;
-cursor: pointer;
-font-size: 12px;
-}
+	#menuedit #menu-button {
+		display: block;
+		padding: 2px;
+		color: #dddddd;
+		cursor: pointer;
+		font-size: 12px;
+	}
 }
 
 @media screen and (orientation: portrait) {
-html, body{
-  width: 100%;
-}
-#menu_icon {
-  width: 10%;
+	html, body{
+  		width: 100%;
+	}
+	#menu_icon {
+  	width: 10%;
 }
 
-#menuedit #menu-button {
-  display: block;
-  padding: 2px;
-  color: #dddddd;
-  cursor: pointer;
-  font-size: 12px;
+	#menuedit #menu-button {
+ 	display: block;
+  	padding: 2px;
+  	color: #dddddd;
+ 	cursor: pointer;
+  	font-size: 12px;
 }
 }
 
@@ -345,25 +345,32 @@ html, body{
 
 
 .btn-outline-light {
-color: #fff;
-background-color: #00000000;
-border-color: #ffffff;
+	color: #fff;
+	background-color: #00000000;
+	border-color: #ffffff;
 }
 
 
 .bntClicado {
-background-color:  #fff;
+	background-color:  #fff;
 	color: #161142;
 }
 
 .images-mapa{
-display: block;
+	display: block;
 }
 
 @media screen and (orientation: portrait) {
-.images-mapa {
-  width: 100%;
+	.images-mapa {
+  		width: 100%;
+	}
 }
+
+@media screen and (orientation: landscape) {
+	.images-mapa {
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 #mapa1, #mapa2 {
@@ -389,52 +396,53 @@ body.mostrando-c2 #btn2,
 }
 
 .row{
-font-size: 20px;
+	font-size: 20px;
 }
 
 .camada {
-max-width: 100%;
+	max-width: 100%;
 }
 
 .camada:not(.base) {
-position: absolute;
-z-index: 1;
-top: -0;
-left: 0;
-opacity: 0;
-pointer-events: none;
-transform: scale(0.9);
-transition: all 200ms ease-out;
+	position: absolute;
+	z-index: 1;
+	top: -0;
+	left: 0;
+	opacity: 0;
+	pointer-events: none;
+	transform: scale(0.9);
+	transition: all 200ms ease-out;
 
 }
 
 .camada.visivel {
-transform: scale(1);
-opacity: 1;
+	transform: scale(1);
+	opacity: 1;
 }
 
 .criadoras{
- background-color: #eee4e4;
+	background-color: #eee4e4;
 }
 
 .imagem {
-width: 100%;
-margin: 2%;
-position: relative;
-text-align: center;
-font-family: titulo;
+	width: 100%;
+	margin: 2%;
+	position: relative;
+	text-align: center;
+	font-family: titulo;
 }
 .imagem::after {
-content: attr(data-title);
-position: absolute;
-width: 100%;
-bottom: -20px;
-left: 0;
+	content: attr(data-title);
+	position: absolute;
+	width: 100%;
+	bottom: -20px;
+	left: 0;
 } 
+
 @media screen and (orientation: portrait) {
-.imagens{
-  	width: 100%;
-  	padding: 2%;
+	.imagens{
+  		width: 100%;
+  		padding: 2%;
 	}
 }
 
