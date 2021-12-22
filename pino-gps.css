@@ -3,9 +3,10 @@
   position: absolute;
   left: calc(50% - var(--tamanho) / 2);
   top: calc(50% - var(--tamanho));
-  z-index: 200;
+  z-index: 201;
   width: var(--tamanho);
   height: var(--tamanho);
+  transform-origin: bottom center;
 }
 
 .pino-gps {
@@ -54,18 +55,19 @@
 .marcador-busca {
   --tamanho: 2rem;
   position: absolute;
-  z-index: 199;
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   visibility: hidden;
+  transform-origin: left top;
   width: var(--tamanho);
   height: var(--tamanho);
 }
 
 .marcador-busca::before {
-  content: "x";
+  content: "×";
   font-size: var(--tamanho);
   font-family: monospace;
   font-weight: bold;

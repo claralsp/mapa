@@ -414,6 +414,11 @@ body.mostrando-c2 #btn2,
   max-width: 100%;
 }
 
+.camada.tamanho-total {
+  width: 100%;
+  height: 100%;
+}
+
 @media screen and (orientation: landscape) {
   .camada {
     width: 100%;
@@ -433,9 +438,22 @@ body.mostrando-c2 #btn2,
   transition: all 200ms ease-out;
 }
 
+.camada.sempre-visivel {
+  opacity: 1;
+}
+
 .camada.visivel {
   transform: scale(1);
   opacity: 1;
+}
+
+.camada.sem-transicao {
+  transition-property: none;
+}
+
+.camada-de-marcadores {
+  z-index: 200 !important;
+  /* pointer-events: none; */
 }
 
 .criadoras {

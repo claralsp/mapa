@@ -31,7 +31,7 @@ class ImagemComZoom {
 
     this.displayImage = this.containerEl.querySelector('.base');
     this.layers = this.containerEl.querySelectorAll('.camada');
-    this.pin = this.containerEl.querySelector('.marcador-posicao-usuario');
+    this.pins = [...this.containerEl.querySelectorAll('.marcador')]
 
     this.hammertime = new Hammer(this.containerEl);
   }
@@ -118,12 +118,14 @@ class ImagemComZoom {
   }
 
   updateDisplayImage(x, y, scale) {
-    const transform = `translateX(${x}px) translateY(${y}px) translateZ(0px) scale(${scale}, ${scale})`;
+    const transform = `translateX(${x}px) translateY(${y}px) translateZ(0px) scale(${scale})`;
     this.layers.forEach(el => {
       el.style.transitionProperty = 'opacity';
       el.style.transform = transform
     });
-    this.pin.style.transform = `translateX(${x}px) translateY(${y}px) translateZ(0px)`;
+    this.pins.forEach(el => {
+      el.style.transform = `scale(${1 / scale})`;
+    })
 
     setTimeout(() => {
       this.layers.forEach(el => {
@@ -146,6 +148,17 @@ class ImagemComZoom {
 
 
 
+const mapas = [...document.querySelectorAll('.mapa-com-camadas')];
+window.mapasComCamadas = mapas.map(el => new ImagemComZoom(el));
 
-window.mapasComCamadas = [...document.querySelectorAll('.mapa-com-camadas')].map(el => new ImagemComZoom(el));
-window.mapasComCamadas[0].activateEvents();
+// ativa os eventos de zoom do mapa que está sendo mostrado no momento
+mapas.map(el => el.querySelector('.camada.base')).forEach(el => el.addEventListener('load', e => {
+  const mapaEl = e.currentTarget.closest('.mapa-com-camadas').closest('.row')
+  const indiceMapaAtual = window.campusAtual === 'novaSuica' ? 0 : 1;
+
+  if (mapaEl.id === 'mapa2' && window.campusAtual === 'novaGameleira') {
+    window.mapasComCamadas[indiceMapaAtual].activateEvents();
+  } else if (mapaEl.id === 'mapa1' && window.campusAtual === 'novaSuica') {
+    window.mapasComCamadas[indiceMapaAtual].activateEvents();
+  }
+}))
