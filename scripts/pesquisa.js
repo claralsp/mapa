@@ -1,8 +1,8 @@
 const lugaresDeInteresse = {
   novaGameleira: [{
       predio: '12',
-      latitude: -19.939876408332104,
-      longitude: -43.99836209875846,
+      latitude: -19.93987210186824,
+      longitude: -43.99839218534868,
       nome: 'Banheiro masculino no prédio 12 - primeiro andar',
     },
     {
@@ -722,6 +722,10 @@ campoBuscaEl.addEventListener('input', fazPesquisa);
 
 
 function fazPesquisa() {
+  // remove marcador da última pesquisa (se tiver sido feita)
+  document.querySelectorAll('.marcador-busca').forEach(el => el.classList.remove('visivel'))
+
+  // efetua busca e constrói resultados
   const resultadosEl = document.querySelector('#resultados-da-busca')
 
   let bodyEl = document.querySelector("body");
@@ -743,13 +747,17 @@ function fazPesquisa() {
       resultadosUlEl.innerHTML += `
         <li class="resultado-da-busca">
           ${resultado.nome}
-          <button class="btn btn-link"
+          <button class="btn btn-link mostrar-no-mapa"
             data-latitude="${resultado.latitude}"
             data-longitude="${resultado.longitude}">
             Mostrar no mapa
           </button>
         </li>`
     }
+
+    // click nos botões "Mostrar no mapa"
+    resultadosUlEl.addEventListener('click', mostrarNoMapa)
+
   } else if (bodyEl.classList.contains('mostrando-c2')) {
     for (let lugar of lugaresDeInteresse.novaGameleira) {
       if (lugar.nome.toLowerCase().indexOf(textoDigitado) !== -1) {
@@ -763,12 +771,41 @@ function fazPesquisa() {
       resultadosUlEl.innerHTML += `
         <li class="resultado-da-busca">
           ${resultado.nome}
-          <button class="btn btn-link"
+          <button class="btn btn-link mostrar-no-mapa"
             data-latitude="${resultado.latitude}"
             data-longitude="${resultado.longitude}">
             Mostrar no mapa
           </button>
         </li>`
     }
+
+    // click nos botões "Mostrar no mapa"
+    resultadosUlEl.addEventListener('click', mostrarNoMapa)
   }
+}
+
+
+function mostrarNoMapa(e) {
+  // descobre se o click foi em um botão "Mostrar no mapa"
+  const mostrarNoMapaClicado = e.target.matches('button.mostrar-no-mapa')
+  if (!mostrarNoMapaClicado) return
+
+  const botaoMostrarNoMapaEl = e.target
+
+  // descobre lat/lon do item que queremos mostrar
+  const latitude = botaoMostrarNoMapaEl.dataset.latitude
+  const longitude = botaoMostrarNoMapaEl.dataset.longitude
+
+  // converte lat/lon para coordenadas do mapa 
+  const posicao = converteLatLonParaPorcentagem(latitude, longitude, window.campusAtual)
+
+  // ativa e posiciona um marcador no mapa
+  const mapaEl = document.body.classList.contains('mostrando-c1') ? document.querySelector('#mapa1') : document.querySelector('#mapa2')
+  const marcadorEl = mapaEl.querySelector('.marcador-busca')
+  marcadorEl.style.left = `calc(${posicao.x * 100}%)`;
+  marcadorEl.style.top = `calc(${posicao.y * 100}%)`;
+  marcadorEl.classList.add('visivel')
+
+  // ativa a aba do mapa
+  ativaAba('#btn-mapa-campus')
 }

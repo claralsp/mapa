@@ -1,19 +1,21 @@
 const botoesRodape = document.querySelectorAll('.btn-rodape');
 
 for (let btnRodapeEl of botoesRodape) {
-  btnRodapeEl.addEventListener('click', function(e) {
-    // deixa todos inativos
-    for (let el of botoesRodape) {
-      el.classList.remove('btn-rodape-ativo');
-    }
+  btnRodapeEl.addEventListener('click', ativaAba);
+}
 
-    // ativa apenas o clicado
-    let btnRdpEl = e.currentTarget;
-    btnRdpEl.classList.add('btn-rodape-ativo');
+function ativaAba(eOrSelector) {
+  // deixa todos inativos
+  for (let el of botoesRodape) {
+    el.classList.remove('btn-rodape-ativo');
+  }
 
-    // mostra o conteúdo do botão que foi clicado
-    mostraConteudoDoBotao(btnRdpEl.id);
-  });
+  // ativa apenas o clicado (ou com seletor especificado)
+  let btnRdpEl = eOrSelector.currentTarget || document.querySelector(eOrSelector);
+  btnRdpEl.classList.add('btn-rodape-ativo');
+
+  // mostra o conteúdo do botão que foi clicado
+  mostraConteudoDoBotao(btnRdpEl.id);
 }
 
 

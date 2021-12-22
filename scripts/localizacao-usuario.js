@@ -61,7 +61,7 @@ const triangulacoes = {
   }
 };
 
-let campusAtual = 'novaSuica';
+window.campusAtual = 'novaSuica';
 
 function converteParaCoordenadasBaricentricas(x, y, A, B, C) {
   const origem = B;
@@ -116,10 +116,10 @@ function converteLatLonParaPorcentagem(latitude, longitude, campusAtual) {
 }
 
 function encontrouPosicao(gps) {
-  campusAtual = document.body.classList.contains('mostrando-c1') ? 'novaSuica' : 'novaGameleira';
-  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, campusAtual);
+  window.campusAtual = document.body.classList.contains('mostrando-c1') ? 'novaSuica' : 'novaGameleira';
+  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, window.campusAtual);
 
-  if (campusAtual == 'novaGameleira') {
+  if (window.campusAtual == 'novaGameleira') {
     const marcador2El = document.querySelector('#marcador2');
     marcador2El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
     marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
