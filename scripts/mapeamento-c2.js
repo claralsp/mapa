@@ -1,10 +1,8 @@
 navigator.geolocation.getCurrentPosition(localizarPredio);
 
-let predios = [
-  {
+let predios = [{
     nome: "bandex",
-    circulos: [
-      {
+    circulos: [{
         raio: 0.00010470912090127272,
         centro: {
           x: -19.939239,
@@ -45,8 +43,7 @@ let predios = [
   },
   {
     nome: "p20",
-    circulos: [
-      {
+    circulos: [{
         raio: 0.00013370115930708704,
         centro: {
           x: -19.938832,
@@ -87,15 +84,13 @@ let predios = [
   },
   {
     nome: "decom",
-    circulos: [
-      {
-        raio: 0.00011535163631348725,
-        centro: {
-          x: -19.939583,
-          y: -43.998186
-        }
+    circulos: [{
+      raio: 0.00011535163631348725,
+      centro: {
+        x: -19.939583,
+        y: -43.998186
       }
-    ],
+    }],
     videos: {
       bandex: '',
       p20: '',
@@ -115,8 +110,7 @@ let predios = [
   },
   {
     nome: "principal",
-    circulos: [
-      {
+    circulos: [{
         raio: 0.00011374532957721413,
         centro: {
           x: -19.938619,
@@ -227,15 +221,13 @@ let predios = [
   },
   {
     nome: "p18",
-    circulos: [
-      {
-        raio: 0.00015009663554410555,
-        centro: {
-          x: -19.939968,
-          y: -43.998949
-        }
+    circulos: [{
+      raio: 0.00015009663554410555,
+      centro: {
+        x: -19.939968,
+        y: -43.998949
       }
-    ],
+    }],
     videos: {
       bandex: '',
       p20: '',
@@ -255,8 +247,7 @@ let predios = [
   },
   {
     nome: "p5",
-    circulos: [
-      {
+    circulos: [{
         raio: 0.00009716995420030493,
         centro: {
           x: -19.939590,
@@ -290,8 +281,7 @@ let predios = [
   },
   {
     nome: "p4",
-    circulos: [
-      {
+    circulos: [{
         raio: 0.0000924391691864567,
         centro: {
           x: -19.939511,
@@ -332,15 +322,13 @@ let predios = [
   },
   {
     nome: "depart",
-    circulos: [
-      {
-        raio: 0.00015482893786553448,
-        centro: {
-          x: -19.939577,
-          y: -43.999713
-        }
+    circulos: [{
+      raio: 0.00015482893786553448,
+      centro: {
+        x: -19.939577,
+        y: -43.999713
       }
-    ],
+    }],
     videos: {
       bandex: '',
       p20: '',
@@ -360,15 +348,13 @@ let predios = [
   },
   {
     nome: "biblioteca",
-    circulos: [
-      {
-        raio: 0.00013771347065699022,
-        centro: {
-          x: -19.939435,
-          y: -43.999485
-        }
+    circulos: [{
+      raio: 0.00013771347065699022,
+      centro: {
+        x: -19.939435,
+        y: -43.999485
       }
-    ],
+    }],
     videos: {
       bandex: '',
       p20: '',
@@ -388,8 +374,7 @@ let predios = [
   },
   {
     nome: "oficinas",
-    circulos: [
-      {
+    circulos: [{
         raio: 0.00008415461960110693,
         centro: {
           x: -19.939259,
@@ -423,8 +408,7 @@ let predios = [
   },
   {
     nome: "p12",
-    circulos: [
-      {
+    circulos: [{
         raio: 0.0001333304166351025,
         centro: {
           x: -19.939851,
@@ -465,8 +449,7 @@ let predios = [
   },
   {
     nome: "p8e9",
-    circulos: [
-      {
+    circulos: [{
         raio: 0.00008935882720915027,
         //esse circulo eh do que seria o p8, o menorzinho
         centro: {
@@ -510,15 +493,13 @@ let predios = [
   },
   {
     nome: "cemig",
-    circulos: [
-      {
-        raio: 0.00009968951800459939,
-        centro: {
-          x: -19.938716,
-          y: -44.000119
-        }
+    circulos: [{
+      raio: 0.00009968951800459939,
+      centro: {
+        x: -19.938716,
+        y: -44.000119
       }
-    ],
+    }],
     videos: {
       bandex: '',
       p20: '',
@@ -538,8 +519,7 @@ let predios = [
   },
   {
     nome: "p19",
-    circulos: [
-      {
+    circulos: [{
         raio: .0001015972440580406,
         centro: {
           x: -19.939842,
@@ -573,15 +553,13 @@ let predios = [
   },
   {
     nome: "portaria",
-    circulos: [
-      {
-        raio: 0.00007766595135621686,
-        centro: {
-          x: -19.938274,
-          y: -43.999333
-        }
+    circulos: [{
+      raio: 0.00007766595135621686,
+      centro: {
+        x: -19.938274,
+        y: -43.999333
       }
-    ],
+    }],
     videos: {
       bandex: '',
       p20: '',
@@ -604,32 +582,30 @@ let predios = [
 let paraOndeQueroIr = prompt('Qual prédio quer ir?');
 videoEl.src = predio.videos[paraOndeQueroIr]
 
-function localizarPredio(geoLocalizacao)
-{
+function localizarPredio(geoLocalizacao) {
   let x = (geoLocalizacao.coords.latitude);
   let y = (geoLocalizacao.coords.longitude);
   let userDentroCirculo = false;
   let predioUser = null;
 
-  for(let predio of predios) {
-    for(let circulo of predio.circulos) {
+  for (let predio of predios) {
+    for (let circulo of predio.circulos) {
 
-      let distanciaUserACirculo = calculaDistancia(
-        {
-          x:x,
-          y:y
+      let distanciaUserACirculo = calculaDistancia({
+          x: x,
+          y: y
         },
         circulo.centro
       );
 
       userDentroCirculo = distanciaUserACirculo <= circulo.raio;
 
-      if(userDentroCirculo) {
+      if (userDentroCirculo) {
         predioUser = predio;
         break;
       }
     }
-    if(userDentroCirculo) {
+    if (userDentroCirculo) {
       break;
     }
   }
@@ -638,7 +614,6 @@ function localizarPredio(geoLocalizacao)
 }
 
 
-function calculaDistancia(a, b)
-{
+function calculaDistancia(a, b) {
   return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
 }

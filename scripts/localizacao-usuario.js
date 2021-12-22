@@ -172,4 +172,3 @@ if (navigator.geolocation) {
     enableHighAccuracy: true
   });
 }
-
