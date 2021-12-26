@@ -20,37 +20,38 @@
   <meta property="og:url" content="https://claralsp.github.io/">
   <meta property="og:site_name" content="M.CEFET">
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content=https://claralsp.github.io/">
+  <meta property="twitter:url" content="https://claralsp.github.io/">
   <meta property="twitter:title" content="M.CEFET - Mapa interativo">
   <meta property="twitter:description" content="Mapa interativo do CEFET-MG mostrando os campi Nova Suiça e Nova Gameleira e a possibilidade de você saber onde você está e pesquisar diferentes lugares e utilidades, como banheiros, lanchonetes, portarias, secretarias, locais de estudo e descanso">
   <meta property="twitter:image" content="https://fegemo.github.io/mapa/images/social-media.png">
   <meta name="twitter:image:alt" content="Trecho de página mostrando a aplicação M.CEFET que apresenta um mapa dos campi Nova Suiça e Nova Gameleira do CEFET-MG, a localização do usuário no GPS e botões para visualizar e pesquisar diferentes camadas de informações, como restaurantes, prédios escolares, secretarias, banheiros e lugares para estudar e descansar">
+  <meta name="theme-color" content="#161143">
 </head>
 
-<body class="mostrando-c1 aba-mapa-ativa ">
-  <div id="container-principal ">
-    <div id="parte1 ">
+<body class="mostrando-c1 aba-mapa-ativa">
+  <div id="container-principal">
+    <div id="parte1">
 
       <!--cabeçalho-->
-      <div id="cabecalhos ">
-        <div id="menuedit ">
-          <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="estilo-botao ">
-              <button class="navbar-toggler " type="button " data-toggle="collapse " data-target="#navbarTogglerDemo03 " aria-controls="navbarTogglerDemo03 " aria-expanded="false " aria-label="Toggle navigation ">
-                <span class="navbar-toggler-icon "></span>
+      <div id="cabecalhos">
+        <div id="menuedit">
+          <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="estilo-botao">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
               </button>
             </div>
 
-            <h1 class="navbar-brand " id="titulopagina ">M.CEFET</h1>
-            <img id="cefetlogo " src="images/cabecalho.png ">
+            <h1 class="navbar-brand" id="titulopagina">M.CEFET</h1>
+            <img id="cefetlogo" src="images/cabecalho.png">
 
-            <div class="collapse navbar-collapse " id="navbarTogglerDemo03 ">
-              <ul class="navbar-nav mr-auto mt-2 mt-lg-0 ">
-                <li class="nav-item active ">
-                  <a class="nav-link " href="index.html ">Página Inicial<span class="sr-only "></span></a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Página Inicial<span class="sr-only"></span></a>
                 </li>
-                <li class="nav-item ">
-                  <a class="nav-link " href="sobre.html ">Sobre esta aplicação</a>
+                <li class="nav-item">
+                  <a class="nav-link" href="sobre.html">Sobre esta aplicação</a>
                 </li>
               </ul>
             </div>
@@ -59,145 +60,145 @@
       </div>
     </div>
 
-    <div id="parte2 " class="scrolling-element ">
-      <div class="botoes-campi ">
-        <button data-campus="novaSuica " type="button " class="btn btn-outline-light ">Campus Nova Suiça</button>
-        <button data-campus="novaGameleira " type="button " class="btn btn-outline-light ">Campus Nova Gameleira</button>
+    <div id="parte2" class="scrolling-element">
+      <div class="botoes-campi">
+        <button data-campus="novaSuica" type="button" class="btn btn-outline-light">Campus Nova Suiça</button>
+        <button data-campus="novaGameleira" type="button" class="btn btn-outline-light">Campus Nova Gameleira</button>
       </div>
-      <div id="mapeamento " class="box ">
-        <div class="row " id="mapa1 ">
-          <div class="mapa-com-camadas ">
-            <div class="camada tamanho-total sempre-visivel sem-transicao camada-de-marcadores ">
-              <div id="marcador1 " class="marcador marcador-posicao-usuario ">
-                <div class="pino-gps "></div>
-                <div class="pulsacao "></div>
+      <div id="mapeamento" class="box">
+        <div class="row" id="mapa1">
+          <div class="mapa-com-camadas">
+            <div class="camada tamanho-total sempre-visivel sem-transicao camada-de-marcadores">
+              <div id="marcador1" class="marcador marcador-posicao-usuario">
+                <div class="pino-gps"></div>
+                <div class="pulsacao"></div>
               </div>
-              <div class="marcador marcador-busca "></div>
+              <div class="marcador marcador-busca"></div>
             </div>
-            <img class="base camada images-mapa " src="images/c1/base.png ">
-            <img class="predios1 camada images-mapa " src="images/c1/predios-e-entradas.png ">
-            <img class="descanco1 camada images-mapa " src="images/c1/lugares-para-descansar.png ">
-            <img class="comer1 camada images-mapa " src="images/c1/lugares-para-comer.png ">
-            <img class="caixas1 camada images-mapa " src="images/c1/caixas-eletronicos.png ">
-            <img class="banheiros1 camada images-mapa " src="images/c1/banheiros.png ">
+            <img class="base camada images-mapa" src="images/c1/base.png">
+            <img class="predios1 camada images-mapa" src="images/c1/predios-e-entradas.png">
+            <img class="descanco1 camada images-mapa" src="images/c1/lugares-para-descansar.png">
+            <img class="comer1 camada images-mapa" src="images/c1/lugares-para-comer.png">
+            <img class="caixas1 camada images-mapa" src="images/c1/caixas-eletronicos.png">
+            <img class="banheiros1 camada images-mapa" src="images/c1/banheiros.png">
           </div>
 
-          <div class="ativadores-de-camadas ">
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada predios1 custom-control-input " type="checkbox " id="image-item1 " value="predios ">
-              <label for="image-item1 " class="custom-control-label ">Prédios e Entradas</label>
+          <div class="ativadores-de-camadas">
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada predios1 custom-control-input" type="checkbox" id="image-item1" value="predios">
+              <label for="image-item1" class="custom-control-label">Prédios e Entradas</label>
             </div>
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada descanco1 custom-control-input " type="checkbox " id="image-item2 " value="predios ">
-              <label for="image-item2 " class="custom-control-label ">Lugares para descansar</label>
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada descanco1 custom-control-input" type="checkbox" id="image-item2" value="predios">
+              <label for="image-item2" class="custom-control-label">Lugares para descansar</label>
             </div>
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada comer1 custom-control-input " type="checkbox " id="image-item3 " value="predios ">
-              <label for="image-item3 " class="custom-control-label ">Lugares para comer</label>
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada comer1 custom-control-input" type="checkbox" id="image-item3" value="predios">
+              <label for="image-item3" class="custom-control-label">Lugares para comer</label>
             </div>
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada caixas1 custom-control-input " type="checkbox " id="image-item4 " value="predios ">
-              <label for="image-item4 " class="custom-control-label ">Caixas Eletrônicos</label>
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada caixas1 custom-control-input" type="checkbox" id="image-item4" value="predios">
+              <label for="image-item4" class="custom-control-label">Caixas Eletrônicos</label>
             </div>
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada banheiros1 custom-control-input " type="checkbox " id="image-item5 " value="predios ">
-              <label for="image-item5 " class="custom-control-label "> Banheiros</label>
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada banheiros1 custom-control-input" type="checkbox" id="image-item5" value="predios">
+              <label for="image-item5" class="custom-control-label"> Banheiros</label>
             </div>
           </div>
         </div>
 
 
-        <div class="row " id="mapa2 ">
-          <div class="identificacao-do-predio ">
-            Você está em: <span class="predio-do-usuario ">XXX</span>
+        <div class="row" id="mapa2">
+          <div class="identificacao-do-predio">
+            Você está em: <span class="predio-do-usuario">XXX</span>
           </div>
-          <div class="mapa-com-camadas ">
-            <div class="camada tamanho-total sempre-visivel sem-transicao camada-de-marcadores ">
-              <div id="marcador2 " class="marcador marcador-posicao-usuario ">
-                <div class="pino-gps "></div>
-                <div class="pulsacao "></div>
+          <div class="mapa-com-camadas">
+            <div class="camada tamanho-total sempre-visivel sem-transicao camada-de-marcadores">
+              <div id="marcador2" class="marcador marcador-posicao-usuario">
+                <div class="pino-gps"></div>
+                <div class="pulsacao"></div>
               </div>
-              <div class="marcador marcador-busca "></div>
+              <div class="marcador marcador-busca"></div>
             </div>
-            <img class="base camada images-mapa " src="images/c2/base.png ">
-            <img class="predios2 camada images-mapa " src="images/c2/predios-e-entradas2.png ">
-            <img class="descanco2 camada images-mapa " src="images/c2/lugares-para-descansar2.png ">
-            <img class="comer2 camada images-mapa " src="images/c2/lugares-para-comer.png ">
-            <img class="caixas2 camada images-mapa " src="images/c2/caixas-eletronicos.png ">
-            <img class="banheiros2 camada images-mapa " src="images/c2/banheiros.png ">
+            <img class="base camada images-mapa" src="images/c2/base.png">
+            <img class="predios2 camada images-mapa" src="images/c2/predios-e-entradas2.png">
+            <img class="descanco2 camada images-mapa" src="images/c2/lugares-para-descansar2.png">
+            <img class="comer2 camada images-mapa" src="images/c2/lugares-para-comer.png">
+            <img class="caixas2 camada images-mapa" src="images/c2/caixas-eletronicos.png">
+            <img class="banheiros2 camada images-mapa" src="images/c2/banheiros.png">
           </div>
 
-          <div class="ativadores-de-camadas ">
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada predios2 custom-control-input " type="checkbox " id="image-item6 " value="predios ">
-              <label for="image-item6 " class="custom-control-label ">Prédios e Entradas</label>
+          <div class="ativadores-de-camadas">
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada predios2 custom-control-input" type="checkbox" id="image-item6" value="predios">
+              <label for="image-item6" class="custom-control-label">Prédios e Entradas</label>
             </div>
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada descanco2 custom-control-input " type="checkbox " id="image-item7 " value="predios ">
-              <label for="image-item7 " class="custom-control-label ">Lugares para descansar</label>
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada descanco2 custom-control-input" type="checkbox" id="image-item7" value="predios">
+              <label for="image-item7" class="custom-control-label">Lugares para descansar</label>
             </div>
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada comer2 custom-control-input " type="checkbox " id="image-item8 " value="predios ">
-              <label for="image-item8 " class="custom-control-label ">Lugares para comer</label>
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada comer2 custom-control-input" type="checkbox" id="image-item8" value="predios">
+              <label for="image-item8" class="custom-control-label">Lugares para comer</label>
             </div>
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada caixas2 custom-control-input " type="checkbox " id="image-item9 " value="predios ">
-              <label for="image-item9 " class="custom-control-label ">Caixas Eletrônicos</label>
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada caixas2 custom-control-input" type="checkbox" id="image-item9" value="predios">
+              <label for="image-item9" class="custom-control-label">Caixas Eletrônicos</label>
             </div>
-            <div class="custom-control custom-switch form-row ">
-              <input class="ativa-camada banheiros2 custom-control-input " type="checkbox " id="image-item10 " value="predios ">
-              <label for="image-item10 " class="custom-control-label "> Banheiros</label>
+            <div class="custom-control custom-switch form-row">
+              <input class="ativa-camada banheiros2 custom-control-input" type="checkbox" id="image-item10" value="predios">
+              <label for="image-item10" class="custom-control-label"> Banheiros</label>
             </div>
           </div>
         </div>
       </div>
 
       <!--COMO CHEGAR?-->
-      <div id="como-chegar ">
-        <div id="como-chegar-c1 ">
+      <div id="como-chegar">
+        <div id="como-chegar-c1">
           <h4>Endereço</h4>
           <p>Av. Amazonas, 5253 - Nova Suíça, Belo Horizonte - MG</p>
-          <div class="como-chegar-mapa ">
-            <iframe class="como-chegar-mapa " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8548874419494!2d-43.980661385978514!3d-19.93051898660347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa696ff215ab53d%3A0x6f66625e27c8ccc1!2sCentro%20Federal%20de%20Educa%C3%A7%C3%A3o%20Tecnol%C3%B3gica%20de%20Minas%20Gerais%20(CEFET-MG)!5e0!3m2!1spt-BR!2sbr!4v1609968151592!5m2!1spt-BR!2sbr "
-              width="100% " height="300 " frameborder="0 " style="border:0; " allowfullscreen=" " aria-hidden="false " tabindex="0 "></iframe>
+          <div class="como-chegar-mapa">
+            <iframe class="como-chegar-mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3750.8548874419494!2d-43.980661385978514!3d-19.93051898660347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa696ff215ab53d%3A0x6f66625e27c8ccc1!2sCentro%20Federal%20de%20Educa%C3%A7%C3%A3o%20Tecnol%C3%B3gica%20de%20Minas%20Gerais%20(CEFET-MG)!5e0!3m2!1spt-BR!2sbr!4v1609968151592!5m2!1spt-BR!2sbr"
+              width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
           <h4>De ônibus:</h4>
           <p>1505 - 1509 - 1680 - 2152 - 2550 - 30 - 415R - S41 - 2104</p>
           <h4>De metrô:</h4>
-          <p>CNS: Estação Calafate <a href="https://www.google.com/maps/dir/Esta%C3%A7%C3%A3o+Calafate+-+Calafate,+Belo+Horizonte+-+MG,+30410-620/CEFET-MG+-+Campus+I+-+Avenida+Amazonas+-+Nova+Su%C3%AD%C3%A7a,+Belo+Horizonte+-+MG/@-19.9262695,-43.9784637,16z/am=t/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xa697171b2a3c47:0x86ae52f45c5b1cf3!2m2!1d-43.9703012!2d-19.922334!1m5!1m1!1s0xa696ff215ab53d:0x6f66625e27c8ccc1!2m2!1d-43.9784727!2d-19.930519!3e2 ">(Link
+          <p>CNS: Estação Calafate <a href="https://www.google.com/maps/dir/Esta%C3%A7%C3%A3o+Calafate+-+Calafate,+Belo+Horizonte+-+MG,+30410-620/CEFET-MG+-+Campus+I+-+Avenida+Amazonas+-+Nova+Su%C3%AD%C3%A7a,+Belo+Horizonte+-+MG/@-19.9262695,-43.9784637,16z/am=t/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0xa697171b2a3c47:0x86ae52f45c5b1cf3!2m2!1d-43.9703012!2d-19.922334!1m5!1m1!1s0xa696ff215ab53d:0x6f66625e27c8ccc1!2m2!1d-43.9784727!2d-19.930519!3e2">(Link
               para trajeto)</a>
           </p>
         </div>
 
-        <div id="como-chegar-c2 ">
+        <div id="como-chegar-c2">
           <h4>Endereço</h4>
           <p>Av. Amazonas, 7675 - Nova Gameleira, Belo Horizonte - MG</p>
-          <div class="como-chegar-mapa ">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7501.312831476838!2d-43.999519822753896!3d-19.938878457201298!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72e85b0a73d210a1!2sCEFET-MG%20-%20Campus%20Nova%20Gameleira!5e0!3m2!1spt-BR!2sbr!4v1640552460915!5m2!1spt-BR!2sbr "
-              width="100% " height="300 " frameborder="0 " style="border:0; " allowfullscreen=" " aria-hidden="false " tabindex="0 "></iframe>
+          <div class="como-chegar-mapa">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7501.312831476838!2d-43.999519822753896!3d-19.938878457201298!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x72e85b0a73d210a1!2sCEFET-MG%20-%20Campus%20Nova%20Gameleira!5e0!3m2!1spt-BR!2sbr!4v1640552460915!5m2!1spt-BR!2sbr"
+              width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
           </div>
           <h4>De ônibus:</h4>
           <p>1270 - 1502 - 2550 - 30 - 3956 - 415R</p>
           <h4>De metrô:</h4>
-          <p>CNG: Estação Vila Oeste <a href="https://www.google.com/maps/dir/Esta%C3%A7%C3%A3o+Vila+Oeste,+R.+Quilombo,+300+-+Vila+Oeste,+Belo+Horizonte+-+MG,+30532-010/CEFET-MG+Campus+II+-+Avenida+Amazonas+-+Nova+Gameleira,+Belo+Horizonte+-+MG/@-19.9385649,-44.0020931,18z/am=t/data=!4m14!4m13!1m5!1m1!1s0xa696685f1d57e5:0xc750852867d48415!2m2!1d-44.0027129!2d-19.9386382!1m5!1m1!1s0xa6965ceade4c53:0x4980bb6236578f78!2m2!1d-43.9991765!2d-19.93906!3e2 ">(Link
+          <p>CNG: Estação Vila Oeste <a href="https://www.google.com/maps/dir/Esta%C3%A7%C3%A3o+Vila+Oeste,+R.+Quilombo,+300+-+Vila+Oeste,+Belo+Horizonte+-+MG,+30532-010/CEFET-MG+Campus+II+-+Avenida+Amazonas+-+Nova+Gameleira,+Belo+Horizonte+-+MG/@-19.9385649,-44.0020931,18z/am=t/data=!4m14!4m13!1m5!1m1!1s0xa696685f1d57e5:0xc750852867d48415!2m2!1d-44.0027129!2d-19.9386382!1m5!1m1!1s0xa6965ceade4c53:0x4980bb6236578f78!2m2!1d-43.9991765!2d-19.93906!3e2">(Link
               para trajeto)</a>
           </p>
         </div>
       </div>
 
       <!--CAMPO DE PESQUISA-->
-      <section id="busca ">
-        <label for="campo-de-busca ">Pesquise por um local</label>
-        <div class="campo-e-botao ">
-          <input type="search " id="campo-de-busca " placeholder="Digite o local desejado... ">
-          <button type="button " class="btn btn-primary " id="botao-pesquisa ">🔍</button>
+      <section id="busca">
+        <label for="campo-de-busca">Pesquise por um local</label>
+        <div class="campo-e-botao">
+          <input type="search" id="campo-de-busca" placeholder="Digite o local desejado...">
+          <button type="button" class="btn btn-primary" id="botao-pesquisa">🔍</button>
         </div>
 
-        <div id="resultados-da-busca ">
+        <div id="resultados-da-busca">
           <p></p>
           <ul>
-            <li class="resultado-da-busca ">
-              <button class="btn btn-link "></button>
+            <li class="resultado-da-busca">
+              <button class="btn btn-link"></button>
             </li>
           </ul>
         </div>
@@ -205,35 +206,35 @@
     </div>
 
     <!--PESQUISAS - MENU RODAPÉ-->
-    <footer class="opcoes ">
-      <button id="btn-mapa-campus " class="btn-rodape btn-rodape-ativo ">
-        <img src="images/mapacampus.png " alt="Ícone de mapa " width="40% ">
+    <footer class="opcoes">
+      <button id="btn-mapa-campus" class="btn-rodape btn-rodape-ativo">
+        <img src="images/mapacampus.png" alt="Ícone de mapa" width="40%">
         <span>Mapa</span>
       </button>
-      <button id="btn-lugares-campus " class="btn-rodape ">
-        <img src="images/lugaresnocampus.png " alt="Ícone de busca " width="40% ">
+      <button id="btn-lugares-campus" class="btn-rodape">
+        <img src="images/lugaresnocampus.png" alt="Ícone de busca" width="40%">
         <span>Lugares</span>
       </button>
-      <button id="btn-como-chegar " class="btn-rodape ">
-        <img src="images/comochegar.png " alt="Ícone de caminhos " width="40% ">
+      <button id="btn-como-chegar" class="btn-rodape">
+        <img src="images/comochegar.png" alt="Ícone de caminhos" width="40%">
         <span>Como chegar?</span>
       </button>
     </footer>
   </div>
 
 
-  <script src="scripts/mapacheckbox.js "></script>
-  <script src="scripts/sobreposicao.js "></script>
-  <script src="scripts/rodape.js "></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js " integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN " crossorigin="anonymous "></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js " integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q " crossorigin="anonymous "></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js " integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx " crossorigin="anonymous "></script>
-  <script src="scripts/hammer.min.js "></script>
-  <script src="scripts/zoom-no-mapa.js "></script>
-  <script src="scripts/mapeamento-c2.js "></script>
-  <script src="scripts/localizacao-usuario.js "></script>
-  <script src="scripts/identifica-campus.js "></script>
-  <script src="scripts/pesquisa.js "></script>
+  <script src="scripts/mapacheckbox.js"></script>
+  <script src="scripts/sobreposicao.js"></script>
+  <script src="scripts/rodape.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="scripts/hammer.min.js"></script>
+  <script src="scripts/zoom-no-mapa.js"></script>
+  <script src="scripts/mapeamento-c2.js"></script>
+  <script src="scripts/localizacao-usuario.js"></script>
+  <script src="scripts/identifica-campus.js"></script>
+  <script src="scripts/pesquisa.js"></script>
 
 
 </body>
