@@ -116,19 +116,13 @@ function converteLatLonParaPorcentagem(latitude, longitude, campusAtual) {
 }
 
 function encontrouPosicao(gps) {
-  window.campusAtual = document.body.classList.contains('mostrando-c1') ? 'novaSuica' : 'novaGameleira';
+  const idMarcador = window.campusAtual === 'novaSuica' ? 'marcador1' : 'marcador2';
+  const marcadorEl = document.querySelector(`#${idMarcador}`);
+
   const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, window.campusAtual);
 
-  if (window.campusAtual == 'novaGameleira') {
-    const marcador2El = document.querySelector('#marcador2');
-    marcador2El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-    marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
-  } else {
-    const marcador1El = document.querySelector('#marcador1');
-    marcador1El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-    marcador1El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
-  }
-
+  marcadorEl.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
+  marcadorEl.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
 }
 
 function erroNoGPS(erro) {

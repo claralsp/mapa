@@ -399,8 +399,8 @@ body.mostrando-c2 #mapa2 {
   display: block;
 }
 
-body.mostrando-c1 #btn1,
-body.mostrando-c2 #btn2,
+body.mostrando-c1 [data-campus="novaSuica"],
+body.mostrando-c2 [data-campus="novaGameleira"],
 .bntClicado {
   background-color: #fff;
   color: #161142;
@@ -660,8 +660,8 @@ body.mostrando-c2 #como-chegar-c1 {
   display: none;
 }
 
-body.usuario-no-c1 #btn1::before,
-body.usuario-no-c2 #btn2::before {
+body.usuario-no-c1 [data-campus="novaSuica"]::before,
+body.usuario-no-c2 [data-campus="novaGameleira"]::before {
   content: "";
   display: inline-block;
   --tamanho: 0.75em;
@@ -686,6 +686,15 @@ body.usuario-no-c2 #btn2::before {
   }
 }
 
+.marcador-posicao-usuario {
+  opacity: 0;
+}
+
+body.usuario-no-c1.mostrando-c1 .marcador-posicao-usuario,
+body.usuario-no-c2.mostrando-c2 .marcador-posicao-usuario {
+  opacity: 1;
+}
+
 
 /* botões do rodapé e as "abas" */
 
@@ -708,6 +717,8 @@ body.aba-como-chegar-ativa #busca {
   display: flex;
   justify-content: center;
   background-color: #fff;
+  position: sticky;
+  bottom: 0;
 }
 
 .btn-rodape {

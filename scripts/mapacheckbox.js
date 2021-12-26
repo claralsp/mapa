@@ -1,19 +1,23 @@
-const btn_1 = document.getElementById('btn1');
-const btn_2 = document.getElementById('btn2');
-const bodyEl = document.querySelector('body');
+const botoesCampi = document.querySelectorAll('[data-campus]');
 
-btn_1.addEventListener('click', () => {
-  bodyEl.classList.remove('mostrando-c2');
-  bodyEl.classList.add('mostrando-c1');
-  window.campusAtual = 'novaSuica';
-  window.mapasComCamadas[1].deactivateEvents();
-  window.mapasComCamadas[0].activateEvents();
-});
+botoesCampi.forEach(buttonEl => buttonEl.addEventListener('click', e => {
+  const campus = e.currentTarget.dataset.campus;
+  const changeEvent = new CustomEvent('campuschanged', { detail: { campus } });
+  document.dispatchEvent(changeEvent);
+}));
 
-btn_2.addEventListener('click', () => {
-  bodyEl.classList.remove('mostrando-c1');
-  bodyEl.classList.add('mostrando-c2');
-  window.campusAtual = 'novaGameleira';
-  window.mapasComCamadas[0].deactivateEvents();
-  window.mapasComCamadas[1].activateEvents();
+document.addEventListener('campuschanged', e => {
+  const campus = e.detail.campus || 'novaSuica';
+  window.campusAtual = campus;
+
+  document.body.classList.toggle('mostrando-c1', campus === 'novaSuica');
+  document.body.classList.toggle('mostrando-c2', campus === 'novaGameleira');
+
+  if (campus === 'novaSuica') {
+    window.mapasComCamadas[1].deactivateEvents();
+    window.mapasComCamadas[0].activateEvents();
+  } else if (campus === 'novaGameleira') {
+    window.mapasComCamadas[0].deactivateEvents();
+    window.mapasComCamadas[1].activateEvents();
+  }
 });

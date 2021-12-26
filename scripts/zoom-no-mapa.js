@@ -152,7 +152,15 @@ const mapas = [...document.querySelectorAll('.mapa-com-camadas')];
 window.mapasComCamadas = mapas.map(el => new ImagemComZoom(el));
 
 // ativa os eventos de zoom do mapa que está sendo mostrado no momento
-mapas.map(el => el.querySelector('.camada.base')).forEach(el => el.addEventListener('load', e => {
+mapas.map(el => el.querySelector('.camada.base')).forEach(el => {
+  if (el.complete) {
+    imageLoaded({ currentTarget: el });
+  } else {
+    el.addEventListener('load', imageLoaded);
+  }
+});
+
+function imageLoaded(e) {
   const mapaEl = e.currentTarget.closest('.mapa-com-camadas').closest('.row')
   const indiceMapaAtual = window.campusAtual === 'novaSuica' ? 0 : 1;
 
@@ -161,4 +169,4 @@ mapas.map(el => el.querySelector('.camada.base')).forEach(el => el.addEventListe
   } else if (mapaEl.id === 'mapa1' && window.campusAtual === 'novaSuica') {
     window.mapasComCamadas[indiceMapaAtual].activateEvents();
   }
-}))
+}
