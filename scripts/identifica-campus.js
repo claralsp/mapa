@@ -43,7 +43,7 @@ function localizarCampus(geoLocalizacao) {
     }
   }
 
-  const mostrandoCampus = campusUser.nome || 'novaSuica';
+  const mostrandoCampus = campusUser?.nome || 'novaSuica';
   document.dispatchEvent(new CustomEvent('campuschanged', { detail: { campus: mostrandoCampus } }));
 
 }
