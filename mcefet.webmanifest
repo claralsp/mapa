@@ -1,0 +1,15 @@
+{
+  "background_color": "#161143",
+  "description": "Um mapa interativo dos campi Nova Suiça e Nova Gameleira do CEFET-MG em Belo Horizonte",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "images/fav.png",
+      "sizes": "500x500",
+      "type": "image/png"
+    }
+  ],
+  "name": "M.CEFET - Mapa interativo",
+  "short_name": "M.CEFET",
+  "start_url": "/index.html"
+}
