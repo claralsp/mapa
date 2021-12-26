@@ -357,7 +357,7 @@ li {
 
 .btn-outline-light {
   color: #fff;
-  background-color: #00000000;
+  background-color: #161143;
   border-color: #ffffff;
 }
 
@@ -604,18 +604,15 @@ figure {
     font-size: 0.6em;
     z-index: 1000;
   }
-
   #mapa2 .ativadores-de-camadas {
     position: absolute;
     right: 0;
     top: 0;
   }
-
   #mapa1 {
     margin-top: -30%;
     margin-bottom: -20%;
   }
-
   #mapa1 .ativadores-de-camadas {
     position: absolute;
     margin-top: -30%;
@@ -625,7 +622,6 @@ figure {
     gap: 0 1em;
     justify-content: center;
   }
-
   #mapa1 .ativadores-de-camadas .custom-control-label {
     line-height: 2em;
   }
@@ -783,5 +779,43 @@ body.aba-como-chegar-ativa #busca {
   .btn-rodape {
     padding-top: 0%;
     padding-bottom: 0%;
+  }
+}
+
+@media screen and (orientation: landscape) and (min-device-width: 1024px) {
+  .botoes-campi {
+    display: block;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  body.mostrando-c1 #mapa1,
+  body.mostrando-c2 #mapa2 {
+    display: grid;
+    grid-template-columns: minmax(90vh, 1fr) 1fr;
+    align-items: center;
+    margin-top: 0;
+  }
+  .mapa-com-camadas {
+    flex: 2;
+  }
+  .ativadores-de-camadas {
+    flex: 1;
+  }
+  body.mostrando-c1 #mapa1 {
+    margin-top: -10%;
+    margin-bottom: -3%;
+  }
+  .opcoes {
+    position: absolute;
+    width: 400px;
+    bottom: 0;
+    right: 0;
+    border: 1px solid whitesmoke;
+  }
+  .campo-e-botao {
+    max-width: 500px;
+    margin: auto;
   }
 }
