@@ -719,6 +719,7 @@ body.aba-como-chegar-ativa #busca {
   background-color: #fff;
   position: sticky;
   bottom: 0;
+  z-index: 100;
   box-shadow: 4px -4px 8px #0008;
 }
 

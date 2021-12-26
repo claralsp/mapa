@@ -31,9 +31,10 @@ class ImagemComZoom {
 
     this.displayImage = this.containerEl.querySelector('.base');
     this.layers = this.containerEl.querySelectorAll('.camada');
-    this.pins = [...this.containerEl.querySelectorAll('.marcador')]
+    this.pins = [...this.containerEl.querySelectorAll('.marcador')];
+    this.scrollingEl = this.containerEl.closest('.scrolling-element');
 
-    this.hammertime = new Hammer(this.containerEl);
+    this.hammertime = new Hammer(this.containerEl, { domEvents: true });
   }
 
   activateEvents() {
@@ -66,17 +67,28 @@ class ImagemComZoom {
   }
 
   wheel(ev) {
+    const oldImageScale = this.displayImageScale;
     this.displayImageScale = this.displayImageCurrentScale = this.clampScale(this.displayImageScale + (ev.wheelDelta / 800));
     this.updateRange();
     this.displayImageCurrentX = ImagemComZoom.clamp(this.displayImageCurrentX, this.rangeMinX, this.rangeMaxX)
     this.displayImageCurrentY = ImagemComZoom.clamp(this.displayImageCurrentY, this.rangeMinY, this.rangeMaxY)
     this.updateDisplayImage(this.displayImageCurrentX, this.displayImageCurrentY, this.displayImageScale);
+    
+    // se usou scroll pra fazer zoom, consome o evento da barra de rolagem
+    if (oldImageScale !== this.displayImageScale) {
+      ev.preventDefault();
+    }
   }
 
   pan(ev) {
     this.displayImageCurrentX = ImagemComZoom.clamp(this.displayImageX + ev.deltaX, this.rangeMinX, this.rangeMaxX);
-    this.displayImageCurrentY = ImagemComZoom.clamp(this.displayImageY + ev.deltaY, this.rangeMinY, this.rangeMaxY);
+    this.displayImageCurrentY = ImagemComZoom.clamp(this.displayImageY + ev.deltaY, this.rangeMinY, this.rangeMaxY);    
     this.updateDisplayImage(this.displayImageCurrentX, this.displayImageCurrentY, this.displayImageScale);
+    
+    // deixa o usuário rolar a página mesmo arrastando o mapa, caso ele não mude de lugar
+    if (ev.deltaY !== 0 && this.displayImageY === this.displayImageCurrentY) {
+      this.scrollingEl.scrollBy(0, -ev.deltaY * 0.025);
+    }
   }
 
   pinch(ev) {
