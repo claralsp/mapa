@@ -579,8 +579,8 @@ let predios = [{
   }
 ];
 
-let paraOndeQueroIr = prompt('Qual prédio quer ir?');
-videoEl.src = predio.videos[paraOndeQueroIr]
+// let paraOndeQueroIr = prompt('Qual prédio quer ir?');
+// videoEl.src = predio.videos[paraOndeQueroIr]
 
 function localizarPredio(geoLocalizacao) {
   let x = (geoLocalizacao.coords.latitude);
@@ -609,8 +609,9 @@ function localizarPredio(geoLocalizacao) {
       break;
     }
   }
-  console.log(predioUser);
+  // console.log(predioUser);
 
+  return predioUser;
 }
 
 

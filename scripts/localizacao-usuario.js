@@ -123,6 +123,14 @@ function encontrouPosicao(gps) {
 
   marcadorEl.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
   marcadorEl.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
+
+  // verifica se está dentro de um prédio
+  const predio = localizarPredio(gps);
+  const identificacaoEl = document.querySelector('.identificacao-do-predio');
+  if (predio) {
+    identificacaoEl.querySelector('.predio-do-usuario').innerText = predio.nome;
+  }
+  identificacaoEl.classList.toggle('localizado', predio !== null)
 }
 
 function erroNoGPS(erro) {
