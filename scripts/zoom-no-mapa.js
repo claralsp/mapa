@@ -30,7 +30,7 @@ class ImagemComZoom {
     this.panFinish = this.panFinish.bind(this);
 
     this.displayImage = this.containerEl.querySelector('.base');
-    this.layers = this.containerEl.querySelectorAll('.camada');
+    this.layers = [...this.containerEl.querySelectorAll('.camada')];
     this.pins = [...this.containerEl.querySelectorAll('.marcador')];
     this.scrollingEl = this.containerEl.closest('.scrolling-element');
 

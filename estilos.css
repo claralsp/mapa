@@ -434,8 +434,7 @@ body.mostrando-c2 [data-campus="novaGameleira"],
   left: 0;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.9);
-  transition: all 200ms ease-out;
+  transition: opacity 200ms ease-out;
 }
 
 .camada.sempre-visivel {
@@ -443,12 +442,15 @@ body.mostrando-c2 [data-campus="novaGameleira"],
 }
 
 .camada.visivel {
-  transform: scale(1);
   opacity: 1;
 }
 
 .camada.sem-transicao {
   transition-property: none;
+}
+
+.com-sombra {
+  filter: drop-shadow(1px 1px 0 #000);
 }
 
 .camada-de-marcadores {
