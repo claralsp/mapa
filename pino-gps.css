@@ -44,7 +44,7 @@
   height: calc(var(--tamanho) * 1.33333);
   width: calc(var(--tamanho) * 1.33333);
   position: absolute;
-  margin: calc(var(--tamanho) * -0.5) 0 0 calc(var(--tamanho) * -0.5);
+  margin: calc(var(--tamanho) * -0.5) 0 0 calc(var(--tamanho) * -0.4);
   animation: pulsar 1s ease-out;
   animation-iteration-count: infinite;
   opacity: 0;
