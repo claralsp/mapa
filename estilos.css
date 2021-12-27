@@ -599,34 +599,6 @@ figure {
   align-items: center
 }
 
-@media screen and (orientation: landscape) and (max-device-width: 768px) {
-  .ativadores-de-camadas {
-    font-size: 0.6em;
-    z-index: 1000;
-  }
-  #mapa2 .ativadores-de-camadas {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  #mapa1 {
-    margin-top: -30%;
-    margin-bottom: -20%;
-  }
-  #mapa1 .ativadores-de-camadas {
-    position: absolute;
-    margin-top: -30%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0 1em;
-    justify-content: center;
-  }
-  #mapa1 .ativadores-de-camadas .custom-control-label {
-    line-height: 2em;
-  }
-}
-
 @media screen and (orientation: portrait) {
   .perfil {
     width: 50px;
@@ -747,7 +719,7 @@ body.aba-como-chegar-ativa #busca {
   background-color: #fff;
   position: sticky;
   bottom: 0;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: 4px -4px 8px #0008;
 }
 
@@ -817,12 +789,12 @@ body.aba-como-chegar-ativa #busca {
 
 @media screen and (orientation: landscape) {
   .btn-rodape {
-    padding-top: 0%;
-    padding-bottom: 0%;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
-@media screen and (orientation: landscape) and (min-device-width: 1024px) {
+@media screen and (orientation: landscape) and (min-device-width: 901px) {
   .botoes-campi {
     display: block;
     text-align: center;
@@ -833,7 +805,7 @@ body.aba-como-chegar-ativa #busca {
   body.mostrando-c1 #mapa1,
   body.mostrando-c2 #mapa2 {
     display: grid;
-    grid-template-columns: minmax(90vh, 1fr) 1fr;
+    grid-template-columns: minmax(90vh, 2fr) 1fr;
     align-items: center;
     margin-top: 0;
   }
@@ -857,5 +829,56 @@ body.aba-como-chegar-ativa #busca {
   .campo-e-botao {
     max-width: 500px;
     margin: auto;
+  }
+}
+
+@media screen and (orientation: landscape) and (max-device-width: 900px) {
+  .ativadores-de-camadas {
+    font-size: 0.6em;
+    z-index: 1000;
+  }
+  #mapa2 .ativadores-de-camadas {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #mapa1 {
+    margin-top: -30%;
+    margin-bottom: -20%;
+  }
+  #mapa1 .ativadores-de-camadas {
+    position: absolute;
+    width: 100%;
+    margin-top: -30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0 1em;
+    justify-content: center;
+  }
+  #mapa1 .ativadores-de-camadas .custom-control-label {
+    line-height: 2em;
+  }
+  #parte1 .navbar {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex
+  }
+  #titulopagina {
+    margin: 0 1em;
+  }
+  #cefetlogo {
+    width: auto;
+    height: 2em;
+    margin: 0;
+  }
+  .btn-rodape {
+    padding: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-rodape>img {
+    margin: 0 1em 0;
   }
 }
