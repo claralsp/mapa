@@ -87,7 +87,7 @@ class ImagemComZoom {
     
     // deixa o usuário rolar a página mesmo arrastando o mapa, caso ele não mude de lugar
     if (ev.deltaY !== 0 && this.displayImageY === this.displayImageCurrentY) {
-      this.scrollingEl.scrollBy(0, -ev.deltaY * 0.025);
+      this.scrollingEl.scrollBy(0, -ev.deltaY * 0.04);
     }
   }
 
