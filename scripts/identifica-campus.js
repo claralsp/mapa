@@ -1,7 +1,3 @@
-navigator.geolocation.getCurrentPosition(localizarCampus);
-let id = navigator.geolocation.watchPosition(acompanharPosicao);
-
-
 let campi = [{
     nome: "novaSuica",
     latMinima: -19.931815506981785,
@@ -18,12 +14,12 @@ let campi = [{
   }
 ];
 
-function localizarCampus(geoLocalizacao) {
-  let x = (geoLocalizacao.coords.latitude);
-  let y = (geoLocalizacao.coords.longitude);
+function identificarCampusAoIniciar(geoLocalizacao) {
+  let x = geoLocalizacao.coords.latitude;
+  let y = geoLocalizacao.coords.longitude;
   let userDentroCampus = false;
   let campusUser = null;
-  let bodyEl = document.querySelector("body");
+  let bodyEl = document.body;
 
   for (let campus of campi) {
     userDentroCampus = x >= campus.latMinima && x <= campus.latMaxima && y >= campus.longMinima && y <= campus.longMaxima;
@@ -34,9 +30,9 @@ function localizarCampus(geoLocalizacao) {
   }
 
   if (campusUser != null) {
-    if (campusUser.nome === "novaSuica") {
+    if (campusUser.nome === 'novaSuica') {
       bodyEl.classList.add('usuario-no-c1');
-    } else if (campusUser.nome === "novaGameleira") {
+    } else if (campusUser.nome === 'novaGameleira') {
       bodyEl.classList.remove('mostrando-c1');
       bodyEl.classList.add('mostrando-c2');
       bodyEl.classList.add('usuario-no-c2');
@@ -44,16 +40,15 @@ function localizarCampus(geoLocalizacao) {
   }
 
   const mostrandoCampus = campusUser?.nome || 'novaSuica';
-  document.dispatchEvent(new CustomEvent('campuschanged', { detail: { campus: mostrandoCampus } }));
-
+  document.dispatchEvent(new CustomEvent('campuschanged', { detail: { usuarioVendo: mostrandoCampus, usuarioPosicionado: campusUser?.nome } }));
 }
 
-function acompanharPosicao(geoLocalizacao) {
-  let x = (geoLocalizacao.coords.latitude);
-  let y = (geoLocalizacao.coords.longitude);
+function identificarCampusContinuamente(geoLocalizacao) {
+  let x = geoLocalizacao.coords.latitude;
+  let y = geoLocalizacao.coords.longitude;
   let userDentroCampus = false;
   let campusUser = null;
-  let bodyEl = document.querySelector("body");
+  let bodyEl = document.body;
 
   for (let campus of campi) {
     userDentroCampus = x >= campus.latMinima && x <= campus.latMaxima && y >= campus.longMinima && y <= campus.longMaxima;
@@ -63,9 +58,17 @@ function acompanharPosicao(geoLocalizacao) {
     }
   }
 
-  if (campusUser != null && campusUser.nome === "novaSuica") {
+  bodyEl.classList.remove('usuario-no-c1');
+  bodyEl.classList.remove('usuario-no-c2');
+  
+  if (campusUser != null && campusUser.nome === 'novaSuica') {
     bodyEl.classList.add('usuario-no-c1');
-  } else if (campusUser != null && campusUser.nome === "novaGameleira") {
+  } else if (campusUser != null && campusUser.nome === 'novaGameleira') {
     bodyEl.classList.add('usuario-no-c2');
   }
+
+  return campusUser?.nome;
 }
+
+// identifica em que campus o usuário está assim que abre a aplicação
+navigator.geolocation.getCurrentPosition(identificarCampusAoIniciar, null, { enableHighAccuracy: true });

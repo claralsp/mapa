@@ -797,7 +797,7 @@ function mostrarNoMapa(e) {
   const longitude = botaoMostrarNoMapaEl.dataset.longitude
 
   // converte lat/lon para coordenadas do mapa 
-  const posicao = converteLatLonParaPorcentagem(latitude, longitude, window.campusAtual)
+  const posicao = converteLatLonParaPorcentagem(latitude, longitude, window.campusAtual.usuarioVendo)
 
   // ativa e posiciona um marcador no mapa
   const mapaEl = document.body.classList.contains('mostrando-c1') ? document.querySelector('#mapa1') : document.querySelector('#mapa2')

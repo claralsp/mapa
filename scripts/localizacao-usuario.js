@@ -61,7 +61,7 @@ const triangulacoes = {
   }
 };
 
-window.campusAtual = 'novaSuica';
+window.campusAtual = { usuarioVendo: 'novaSuica', usuarioPosicionado: null };
 
 function converteParaCoordenadasBaricentricas(x, y, A, B, C) {
   const origem = B;
@@ -115,22 +115,43 @@ function converteLatLonParaPorcentagem(latitude, longitude, campusAtual) {
   return noMapa;
 }
 
-function encontrouPosicao(gps) {
-  const idMarcador = window.campusAtual === 'novaSuica' ? 'marcador1' : 'marcador2';
+
+function posicionaMarcador(gps) {
+  const idMarcador = window.campusAtual.usuarioPosicionado === 'novaSuica' ? 'marcador1' : 'marcador2';
   const marcadorEl = document.querySelector(`#${idMarcador}`);
-
-  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, window.campusAtual);
-
+  
+  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, window.campusAtual.usuarioPosicionado);
+  
   marcadorEl.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
   marcadorEl.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
+}
 
-  // verifica se está dentro de um prédio
+function identificaPredioOndeEsta(gps) {
   const predio = localizarPredio(gps);
   const identificacaoEl = document.querySelector('.identificacao-do-predio');
   if (predio) {
     identificacaoEl.querySelector('.predio-do-usuario').innerText = predio.nome;
   }
   identificacaoEl.classList.toggle('localizado', predio !== null)
+}
+
+
+function encontrouPosicao(gps) {
+  // 1. identifica o campus (se algum)
+  const campusOndeEsta = identificarCampusContinuamente(gps)
+  if (campusOndeEsta !== window.campusAtual.usuarioPosicionado) {
+    document.dispatchEvent(new CustomEvent('campuschanged', { detail: { usuarioPosicionado: campusOndeEsta, preventAutoChange: true }}));
+  }
+
+  if (!campusOndeEsta) {
+    return;
+  }
+
+  // 2. posiciona marcador do usuário
+  posicionaMarcador(gps);
+
+  // 3. verifica se está dentro de um prédio desse campus
+  identificaPredioOndeEsta(gps);
 }
 
 function tratamentoDeErros(erro) {

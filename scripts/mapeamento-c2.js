@@ -649,8 +649,8 @@ function ativaDepuracaoDoMapeamentoDePredios() {
 
     for (let circulo of predio.circulos) {  
       // converte lat/lon para coordenadas do mapa
-      const { x, y } = converteLatLonParaPorcentagem(circulo.centro.x, circulo.centro.y, window.campusAtual);
-      const { x: xRaio, y: yRaio } = converteLatLonParaPorcentagem(circulo.centro.x + circulo.raio, circulo.centro.y, window.campusAtual);
+      const { x, y } = converteLatLonParaPorcentagem(circulo.centro.x, circulo.centro.y, window.campusAtual.usuarioPosicionado);
+      const { x: xRaio, y: yRaio } = converteLatLonParaPorcentagem(circulo.centro.x + circulo.raio, circulo.centro.y, window.campusAtual.usuarioPosicionado);
       const raio = calculaDistancia({x: xRaio, y: yRaio} , { x, y });
 
       // desenha um círculo
