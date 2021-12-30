@@ -21,6 +21,7 @@ self.addEventListener('install', (e) => {
       '/mapa/scripts/pesquisa.js',
       '/mapa/scripts/rodape.js',
       '/mapa/scripts/sobreposicao.js',
+      '/mapa/scripts/tela-sempre-ligada.js',
       '/mapa/scripts/trabalhar-offline.js',
       '/mapa/scripts/zoom-no-mapa.js',
 

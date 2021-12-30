@@ -37,6 +37,9 @@ function identificarCampusAoIniciar(geoLocalizacao) {
       bodyEl.classList.add('mostrando-c2');
       bodyEl.classList.add('usuario-no-c2');
     }
+    travarTela();
+  } else {
+    destravarTela();
   }
 
   const mostrandoCampus = campusUser?.nome || 'novaSuica';
@@ -63,8 +66,12 @@ function identificarCampusContinuamente(geoLocalizacao) {
   
   if (campusUser != null && campusUser.nome === 'novaSuica') {
     bodyEl.classList.add('usuario-no-c1');
+    travarTela();
   } else if (campusUser != null && campusUser.nome === 'novaGameleira') {
     bodyEl.classList.add('usuario-no-c2');
+    travarTela();
+  } else {
+    destravarTela();
   }
 
   return campusUser?.nome;

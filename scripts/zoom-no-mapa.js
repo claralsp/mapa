@@ -166,7 +166,9 @@ window.mapasComCamadas = mapas.map(el => new ImagemComZoom(el));
 // ativa os eventos de zoom do mapa que está sendo mostrado no momento
 mapas.map(el => el.querySelector('.camada.base')).forEach(el => {
   if (el.complete) {
-    imageLoaded({ currentTarget: el });
+    setTimeout(() => {
+      imageLoaded({ currentTarget: el });
+    }, 0);
   } else {
     el.addEventListener('load', imageLoaded);
   }
