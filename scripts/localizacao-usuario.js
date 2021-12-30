@@ -133,10 +133,6 @@ function encontrouPosicao(gps) {
   identificacaoEl.classList.toggle('localizado', predio !== null)
 }
 
-function erroNoGPS(erro) {
-  console.log(erro)
-};
-
 function tratamentoDeErros(erro) {
   switch (erro.code) {
     case erro.PERMISSION_DENID:
@@ -157,20 +153,10 @@ function tratamentoDeErros(erro) {
   }
 }
 
-function atualizaPosicao() {
-  if (navigator.geolocation) {
 
-    //timeout: tempo limite para obter a geolocalização: 30s
-    let options = { enableHighAccuracy: true, timeout: 30000 };
-    navigator.geolocation.watchPosition(encontrouPosicao, tratamentoDeErros, options);
-  } else {
-    alert("Localização não suportada pelo navegador!");
-  }
-
-}
-
+// ativa o GPS continuamente
 if (navigator.geolocation) {
-  navigator.geolocation.watchPosition(encontrouPosicao, erroNoGPS, atualizaPosicao, tratamentoDeErros, {
+  navigator.geolocation.watchPosition(encontrouPosicao, tratamentoDeErros, {
     enableHighAccuracy: true
   });
 }
