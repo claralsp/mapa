@@ -61,7 +61,7 @@ const triangulacoes = {
   }
 };
 
-let campusAtual = 'novaSuica';
+window.campusAtual = 'novaSuica';
 
 function converteParaCoordenadasBaricentricas(x, y, A, B, C) {
   const origem = B;
@@ -116,19 +116,21 @@ function converteLatLonParaPorcentagem(latitude, longitude, campusAtual) {
 }
 
 function encontrouPosicao(gps) {
-  campusAtual = document.body.classList.contains('mostrando-c1') ? 'novaSuica' : 'novaGameleira';
-  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, campusAtual);
+  const idMarcador = window.campusAtual === 'novaSuica' ? 'marcador1' : 'marcador2';
+  const marcadorEl = document.querySelector(`#${idMarcador}`);
 
-  if (campusAtual == 'novaGameleira') {
-    const marcador2El = document.querySelector('#marcador2');
-    marcador2El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-    marcador2El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
-  } else {
-    const marcador1El = document.querySelector('#marcador1');
-    marcador1El.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
-    marcador1El.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
+  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, window.campusAtual);
+
+  marcadorEl.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
+  marcadorEl.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
+
+  // verifica se está dentro de um prédio
+  const predio = localizarPredio(gps);
+  const identificacaoEl = document.querySelector('.identificacao-do-predio');
+  if (predio) {
+    identificacaoEl.querySelector('.predio-do-usuario').innerText = predio.nome;
   }
-
+  identificacaoEl.classList.toggle('localizado', predio !== null)
 }
 
 function erroNoGPS(erro) {
@@ -172,4 +174,3 @@ if (navigator.geolocation) {
     enableHighAccuracy: true
   });
 }
-
