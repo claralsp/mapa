@@ -132,26 +132,47 @@ function identificaPredioOndeEsta(gps) {
   if (predio) {
     identificacaoEl.querySelector('.predio-do-usuario').innerText = predio.nome;
   }
-  identificacaoEl.classList.toggle('localizado', predio !== null)
+  identificacaoEl.classList.toggle('localizado', predio !== null);
+
+  return predio;
 }
 
 
 function encontrouPosicao(gps) {
+  // isto é usado quando ativamos modo debug (popular dados iniciais)
+  window.lastGPSDataReceived = gps
+
   // 1. identifica o campus (se algum)
   const campusOndeEsta = identificarCampusContinuamente(gps)
   if (campusOndeEsta !== window.campusAtual.usuarioPosicionado) {
     document.dispatchEvent(new CustomEvent('campuschanged', { detail: { usuarioPosicionado: campusOndeEsta, preventAutoChange: true }}));
   }
 
+  // 2. verifica se está dentro de um prédio desse campus
+  const predio = identificaPredioOndeEsta(gps);
+  if (predio !== window.ultimoPredioOndeEstava) {
+    let caminhoSom = predio ? 'saiu-de-predio' : 'entrou-em-predio';
+    caminhoSom = `sounds/${caminhoSom}.wav`;
+    try {
+      new Audio(caminhoSom).play();
+    } catch (erro) {
+      console.debug('Erro ao tocar som referente a prédios: ', erro);
+    }
+    window.ultimoPredioOndeEstava = predio;
+  }
+
+
   if (!campusOndeEsta) {
     return;
   }
 
-  // 2. posiciona marcador do usuário
+  // 3. posiciona marcador do usuário
   posicionaMarcador(gps);
 
-  // 3. verifica se está dentro de um prédio desse campus
-  identificaPredioOndeEsta(gps);
+  // 4. se estiver em modo debug, atualiza dados na interface
+  if (window.debuggingGPS) {
+    atualizaDadosDeGPSEmDebug(gps);
+  }
 }
 
 function tratamentoDeErros(erro) {

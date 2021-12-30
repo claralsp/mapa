@@ -1,7 +1,7 @@
 navigator.geolocation.getCurrentPosition(localizarPredio);
 
 let predios = [{
-    nome: "bandex",
+    nome: "Bandejão",
     circulos: [{
         raio: 0.00010470912090127272,
         centro: {
@@ -42,7 +42,7 @@ let predios = [{
     }
   },
   {
-    nome: "p20",
+    nome: "Prédio 20",
     circulos: [{
         raio: 0.00013370115930708704,
         centro: {
@@ -83,7 +83,7 @@ let predios = [{
     }
   },
   {
-    nome: "decom",
+    nome: "DECOM (p. 17)",
     circulos: [{
       raio: 0.00011535163631348725,
       centro: {
@@ -109,7 +109,7 @@ let predios = [{
     }
   },
   {
-    nome: "principal",
+    nome: "Prédio Principal",
     circulos: [{
         raio: 0.00011374532957721413,
         centro: {
@@ -220,7 +220,7 @@ let predios = [{
     }
   },
   {
-    nome: "p18",
+    nome: "Prédio 18",
     circulos: [{
       raio: 0.00015009663554410555,
       centro: {
@@ -246,7 +246,7 @@ let predios = [{
     }
   },
   {
-    nome: "p5",
+    nome: "Prédio 5",
     circulos: [{
         raio: 0.00009716995420030493,
         centro: {
@@ -280,7 +280,7 @@ let predios = [{
     }
   },
   {
-    nome: "p4",
+    nome: "Prédio 4",
     circulos: [{
         raio: 0.0000924391691864567,
         centro: {
@@ -321,7 +321,7 @@ let predios = [{
     }
   },
   {
-    nome: "depart",
+    nome: "Pós-graduação",
     circulos: [{
       raio: 0.00015482893786553448,
       centro: {
@@ -347,7 +347,7 @@ let predios = [{
     }
   },
   {
-    nome: "biblioteca",
+    nome: "Biblioteca",
     circulos: [{
       raio: 0.00013771347065699022,
       centro: {
@@ -373,7 +373,7 @@ let predios = [{
     }
   },
   {
-    nome: "oficinas",
+    nome: "Oficinas",
     circulos: [{
         raio: 0.00008415461960110693,
         centro: {
@@ -407,7 +407,7 @@ let predios = [{
     }
   },
   {
-    nome: "p12",
+    nome: "Prédio 12 (Civil)",
     circulos: [{
         raio: 0.0001333304166351025,
         centro: {
@@ -448,7 +448,7 @@ let predios = [{
     }
   },
   {
-    nome: "p8e9",
+    nome: "Prédios 8 e 9",
     circulos: [{
         raio: 0.00008935882720915027,
         //esse circulo eh do que seria o p8, o menorzinho
@@ -492,7 +492,7 @@ let predios = [{
     }
   },
   {
-    nome: "cemig",
+    nome: "CEMIG",
     circulos: [{
       raio: 0.00009968951800459939,
       centro: {
@@ -518,7 +518,7 @@ let predios = [{
     }
   },
   {
-    nome: "p19",
+    nome: "Prédio 19",
     circulos: [{
         raio: .0001015972440580406,
         centro: {
@@ -552,7 +552,7 @@ let predios = [{
     }
   },
   {
-    nome: "portaria",
+    nome: "Portaria",
     circulos: [{
       raio: 0.00007766595135621686,
       centro: {
@@ -619,75 +619,4 @@ function calculaDistancia(a, b) {
   return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2));
 }
 
-function ativaDepuracaoDoMapeamentoDePredios() {
-  // pega tamanho da imagem base
-  const baseEl = document.querySelector('#mapa2 .base');
-  const largura = baseEl.offsetWidth;
-  const altura = baseEl.offsetHeight;
 
-  // cria e configura um canvas
-  const canvasEl = document.createElement('canvas');
-  canvasEl.width = largura;
-  canvasEl.height = altura;
-  const nomeDaCamada = 'debug-predios';
-  canvasEl.classList.add(nomeDaCamada, 'camada', 'images-mapa', 'visivel');
-  canvasEl.style.transform = 'translate(0, 0) scale(1)';
-
-  // solicita um contexto para desenharmos
-  const ctx = canvasEl.getContext('2d');
-  const UMA_VOLTA = 2 * Math.PI;
-  const CORES = ['#51574a', '#447c69', '#74c493', '#8e8c6d', '#e4bf80', '#e9d78e', '#e2975d', '#f19670', '#e16552', '#c94a53', '#a34974', '#993767', '#65387d', '#4e2472', '#9163b6', '#e279a3', '#e0598b', '#7c9fb0', '#5698c4'];
-  
-  // percorre os prédios desenhando os círculos que o compõem
-  for (let predio of predios) {
-    const indiceCorAleatoria = Math.floor(Math.random() * CORES.length)
-    const [corAleatoria] = CORES.splice(indiceCorAleatoria, 1);
-
-    ctx.strokeStyle = corAleatoria;
-    ctx.fillStyle = '#fff6';
-    ctx.lineWidth = 2;
-
-    for (let circulo of predio.circulos) {  
-      // converte lat/lon para coordenadas do mapa
-      const { x, y } = converteLatLonParaPorcentagem(circulo.centro.x, circulo.centro.y, window.campusAtual.usuarioPosicionado);
-      const { x: xRaio, y: yRaio } = converteLatLonParaPorcentagem(circulo.centro.x + circulo.raio, circulo.centro.y, window.campusAtual.usuarioPosicionado);
-      const raio = calculaDistancia({x: xRaio, y: yRaio} , { x, y });
-
-      // desenha um círculo
-      ctx.beginPath();
-      ctx.arc(x * largura, y * altura, raio * altura, 0, UMA_VOLTA);
-      ctx.stroke();
-      ctx.fill();
-    }
-  }
-
-  // insere o canvas como uma camada do mapa
-  document.querySelector('#mapa2 .mapa-com-camadas').insertBefore(canvasEl, baseEl);
-  window.mapasComCamadas[1].layers.push(canvasEl);
-
-  // cria e insere um novo ativador de camada
-  const templateAtivador = `
-    <div class="custom-control custom-switch form-row">
-      <input class="ativa-camada ${nomeDaCamada} custom-control-input" type="checkbox" id="ativa-debug-c2" value="${nomeDaCamada}" checked>
-      <label for="ativa-debug-c2" class="custom-control-label">Depuração dos prédios</label>
-    </div>
-  `
-  document.querySelector('#mapa2 .ativadores-de-camadas').innerHTML += templateAtivador;
-}
-
-
-// verifica se está em modo de debug
-const urlSearchParams = new URLSearchParams(window.location.search);
-const params = Object.fromEntries(urlSearchParams.entries());
-const modoDebugAtivado = params['debug'] === 'true';
-
-if (modoDebugAtivado) {
-  const baseEl = document.querySelector('#mapa2 .mapa-com-camadas .base');
-  document.addEventListener('campuschanged', () => {
-    if (baseEl.complete) {
-      ativaDepuracaoDoMapeamentoDePredios();
-    } else {
-      baseEl.addEventListener('load', ativaDepuracaoDoMapeamentoDePredios);
-    }
-  });
-}

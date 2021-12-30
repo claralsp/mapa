@@ -18,6 +18,7 @@ const ALL_FILES = [
   '/scripts/localizacao-usuario.js',
   '/scripts/mapacheckbox.js',
   '/scripts/mapeamento-c2.js',
+  '/scripts/modo-debug.js',
   '/scripts/pesquisa.js',
   '/scripts/rodape.js',
   '/scripts/sobreposicao.js',
@@ -74,7 +75,9 @@ async function fetchThenCache(e) {
   try {
     // tenta usar a rede primeiro
     const [resposta, cache] = await Promise.all([fetch(e.request), caches.open(NOME_DO_CACHE)])
-    await cache.put(e.request.url, resposta.clone())
+    if (resposta.status === 200) {
+      await cache.put(e.request.url, resposta.clone())
+    }
     return resposta
 
   } catch (erro) {

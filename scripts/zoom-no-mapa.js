@@ -176,7 +176,7 @@ mapas.map(el => el.querySelector('.camada.base')).forEach(el => {
 
 function imageLoaded(e) {
   const mapaEl = e.currentTarget.closest('.mapa-com-camadas').closest('.row')
-  const indiceMapaAtual = window.campusAtual.usuarioVendo === 'novaSuica' ? 0 : 1;
+  const indiceMapaAtual = window.campusAtual?.usuarioVendo === 'novaSuica' ? 0 : 1;
 
   if (mapaEl.id === 'mapa2' && window.campusAtual.usuarioVendo === 'novaGameleira') {
     window.mapasComCamadas[indiceMapaAtual].activateEvents();
