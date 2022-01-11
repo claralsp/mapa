@@ -125,14 +125,14 @@ function atualizaDadosDeGPSEmDebug(gps) {
   const [timestampEl] = rootProps
   const [latEl, lonEl, altEl, accEl, altAccEl, headEl, speedEl] = coordsProps
   
-  timestampEl.innerHTML = dataFormatada(gps.timestamp)
-  latEl.innerHTML = gps.coords.latitude
-  lonEl.innerHTML = gps.coords.longitude
-  altEl.innerHTML = gps.coords.altitude
-  accEl.innerHTML = gps.coords.accuracy
-  altAccEl.innerHTML = gps.coords.altitudeAccuracy
-  headEl.innerHTML = gps.coords.heading
-  speedEl.innerHTML = gps.coords.speed
+  timestampEl.innerHTML = dataFormatada(gps?.timestamp) ?? 'sem dados'
+  latEl.innerHTML = gps?.coords?.latitude ?? 'sem dados'
+  lonEl.innerHTML = gps?.coords?.longitude ?? 'sem dados'
+  altEl.innerHTML = gps?.coords?.altitude ?? 'sem dados'
+  accEl.innerHTML = gps?.coords?.accuracy ?? 'sem dados'
+  altAccEl.innerHTML = gps?.coords?.altitudeAccuracy ?? 'sem dados'
+  headEl.innerHTML = gps?.coords?.heading ?? 'sem dados'
+  speedEl.innerHTML = gps?.coords?.speed ?? 'sem dados'
 }
 
 function dataFormatada(timestamp) {
