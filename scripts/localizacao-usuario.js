@@ -46,22 +46,22 @@ const triangulacoes = {
     },
     mapinha: {
       A: {
-        x: 0.144375554,
-        y: 0.397344229
+        x: 0.854738707,
+        y: 0.599591420
       },
       B: {
-        x: 0.916740478,
-        y: 0.477017365
+        x: 0.082373782,
+        y: 0.538304392
       },
       C: {
-        x: 0.251550044,
-        y: 0.567926456
+        x: 0.752878654,
+        y: 0.418794688
       }
     }
   }
 };
 
-window.campusAtual = 'novaSuica';
+window.campusAtual = { usuarioVendo: 'novaSuica', usuarioPosicionado: null };
 
 function converteParaCoordenadasBaricentricas(x, y, A, B, C) {
   const origem = B;
@@ -115,27 +115,65 @@ function converteLatLonParaPorcentagem(latitude, longitude, campusAtual) {
   return noMapa;
 }
 
-function encontrouPosicao(gps) {
-  const idMarcador = window.campusAtual === 'novaSuica' ? 'marcador1' : 'marcador2';
+
+function posicionaMarcador(gps) {
+  const idMarcador = window.campusAtual.usuarioPosicionado === 'novaSuica' ? 'marcador1' : 'marcador2';
   const marcadorEl = document.querySelector(`#${idMarcador}`);
-
-  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, window.campusAtual);
-
+  
+  const noMapa = converteLatLonParaPorcentagem(gps.coords.latitude, gps.coords.longitude, window.campusAtual.usuarioPosicionado);
+  
   marcadorEl.style.left = `calc(${noMapa.x * 100}%  - var(--tamanho) / 2)`;
   marcadorEl.style.top = `calc(${noMapa.y * 100}% - var(--tamanho) * 1.2)`;
+}
 
-  // verifica se está dentro de um prédio
+function identificaPredioOndeEsta(gps) {
   const predio = localizarPredio(gps);
   const identificacaoEl = document.querySelector('.identificacao-do-predio');
   if (predio) {
     identificacaoEl.querySelector('.predio-do-usuario').innerText = predio.nome;
   }
-  identificacaoEl.classList.toggle('localizado', predio !== null)
+  identificacaoEl.classList.toggle('localizado', predio !== null);
+
+  return predio;
 }
 
-function erroNoGPS(erro) {
-  console.log(erro)
-};
+
+function encontrouPosicao(gps) {
+  // isto é usado quando ativamos modo debug (popular dados iniciais)
+  window.lastGPSDataReceived = gps
+
+  // 1. identifica o campus (se algum)
+  const campusOndeEsta = identificarCampusContinuamente(gps)
+  if (campusOndeEsta !== window.campusAtual.usuarioPosicionado) {
+    document.dispatchEvent(new CustomEvent('campuschanged', { detail: { usuarioPosicionado: campusOndeEsta, preventAutoChange: true }}));
+  }
+
+  // 2. verifica se está dentro de um prédio desse campus
+  const predio = identificaPredioOndeEsta(gps);
+  if (predio !== window.ultimoPredioOndeEstava) {
+    let caminhoSom = predio ? 'saiu-de-predio' : 'entrou-em-predio';
+    caminhoSom = `sounds/${caminhoSom}.wav`;
+    try {
+      new Audio(caminhoSom).play();
+    } catch (erro) {
+      console.debug('Erro ao tocar som referente a prédios: ', erro);
+    }
+    window.ultimoPredioOndeEstava = predio;
+  }
+
+
+  if (!campusOndeEsta) {
+    return;
+  }
+
+  // 3. posiciona marcador do usuário
+  posicionaMarcador(gps);
+
+  // 4. se estiver em modo debug, atualiza dados na interface
+  if (window.debuggingGPS) {
+    atualizaDadosDeGPSEmDebug(gps);
+  }
+}
 
 function tratamentoDeErros(erro) {
   switch (erro.code) {
@@ -157,20 +195,10 @@ function tratamentoDeErros(erro) {
   }
 }
 
-function atualizaPosicao() {
-  if (navigator.geolocation) {
 
-    //timeout: tempo limite para obter a geolocalização: 30s
-    let options = { enableHighAccuracy: true, timeout: 30000 };
-    navigator.geolocation.watchPosition(encontrouPosicao, tratamentoDeErros, options);
-  } else {
-    alert("Localização não suportada pelo navegador!");
-  }
-
-}
-
+// ativa o GPS continuamente
 if (navigator.geolocation) {
-  navigator.geolocation.watchPosition(encontrouPosicao, erroNoGPS, atualizaPosicao, tratamentoDeErros, {
+  navigator.geolocation.watchPosition(encontrouPosicao, tratamentoDeErros, {
     enableHighAccuracy: true
   });
 }
